@@ -1423,5 +1423,289 @@ section#services.section {
       new Date().getFullYear();
   </script>
 
+<!-- EMMMY PRINT: WHATSAPP QR CODE + QR SCANNER -->
+<style>
+  #emmy-qr-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    z-index: 9998;
+    width: 220px;
+    padding: 16px;
+    background: #15172b;
+    color: #fff;
+    border: 1px solid #a78bfa;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px #0006;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  #emmy-qr-panel h3 {
+    color: #fff;
+    margin: 0 0 8px;
+    font-size: 17px;
+  }
+
+  #emmy-qr-panel p {
+    color: #ddd;
+    font-size: 13px;
+    margin: 8px 0;
+  }
+
+  #emmy-whatsapp-qr {
+    width: 150px;
+    height: 150px;
+    max-width: 100%;
+    background: white;
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .emmy-qr-btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 9px;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    background: #25d366;
+    color: #071b10;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #emmy-scan-area {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    overflow-y: auto;
+    padding: 20px;
+    background: #080a16ed;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  #emmy-scan-card {
+    max-width: 440px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #171a30;
+    border: 1px solid #a78bfa;
+    border-radius: 16px;
+    text-align: center;
+  }
+
+  #emmy-scan-card h2 {
+    color: white;
+  }
+
+  #emmy-scan-status {
+    overflow-wrap: anywhere;
+    font-size: 14px;
+    color: #e4dcff;
+  }
+
+  #emmy-scan-result {
+    overflow-wrap: anywhere;
+    color: #86efac;
+  }
+
+  #emmy-scan-result a {
+    color: #86efac;
+  }
+
+  #emmy-qr-panel button,
+  #emmy-scan-card button,
+  #emmy-scan-card input {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    #emmy-qr-panel {
+      right: 10px;
+      bottom: 80px;
+      width: 175px;
+      padding: 10px;
+    }
+
+    #emmy-whatsapp-qr {
+      width: 120px;
+      height: 120px;
+    }
+  }
+</style>
+
+<div id="emmy-qr-panel">
+  <h3>EMMMY PRINT</h3>
+  <p>Scan to chat with us on WhatsApp</p>
+
+  <a href="https://wa.me/2348128848068"
+     target="_blank" rel="noopener">
+    <img id="emmy-whatsapp-qr"
+         alt="EMMMY PRINT WhatsApp QR code"
+         src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&amp;data=https%3A%2F%2Fwa.me%2F2348128848068">
+  </a>
+
+  <p>WhatsApp: 0812 884 8068</p>
+
+  <button class="emmy-qr-btn" type="button"
+          onclick="emmyOpenScanner()">
+    Scan a QR Code
+  </button>
+
+  <a class="emmy-qr-btn"
+     href="https://wa.me/2348128848068"
+     target="_blank" rel="noopener">
+    Chat on WhatsApp
+  </a>
+</div>
+
+<div id="emmy-scan-area" role="dialog"
+     aria-modal="true" aria-labelledby="emmy-scan-title">
+  <div id="emmy-scan-card">
+    <h2 id="emmy-scan-title">QR Code Scanner</h2>
+    <p>Allow camera access, or select an image containing a QR code.</p>
+
+    <div id="emmy-reader"></div>
+
+    <p id="emmy-scan-status">Choose an option below to begin.</p>
+    <p id="emmy-scan-result"></p>
+
+    <button class="emmy-qr-btn" type="button"
+            onclick="emmyStartCamera()">
+      Start Camera Scanner
+    </button>
+
+    <label for="emmy-qr-file"
+           style="display:block;margin-top:15px">
+      Scan from an image:
+    </label>
+    <input id="emmy-qr-file" type="file"
+           accept="image/*" capture="environment"
+           style="margin-top:8px;max-width:100%">
+
+    <button class="emmy-qr-btn" type="button"
+            onclick="emmyStopScanner()"
+            style="background:#a78bfa">
+      Close Scanner
+    </button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script>
+  let emmyQrScanner = null;
+  let emmyScannerRunning = false;
+
+  function emmyOpenScanner() {
+    document.getElementById("emmy-scan-area").style.display = "block";
+    document.getElementById("emmy-scan-status").textContent =
+      "Tap Start Camera Scanner or choose a QR image.";
+    document.getElementById("emmy-scan-result").textContent = "";
+  }
+
+  function emmyHandleScan(decodedText) {
+    document.getElementById("emmy-scan-status").textContent =
+      "QR code scanned successfully!";
+    const result = document.getElementById("emmy-scan-result");
+    result.replaceChildren();
+
+    // Only offer clickable links for web addresses.
+    if (/^https?:\/\//i.test(decodedText)) {
+      const link = document.createElement("a");
+      link.href = decodedText;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = decodedText;
+      result.appendChild(link);
+    } else {
+      result.textContent = decodedText;
+    }
+
+    emmyStopCameraOnly();
+  }
+
+  function emmyStartCamera() {
+    if (!window.Html5Qrcode) {
+      document.getElementById("emmy-scan-status").textContent =
+        "Scanner library did not load. Check your internet connection and refresh.";
+      return;
+    }
+
+    if (emmyScannerRunning) return;
+
+    document.getElementById("emmy-scan-status").textContent =
+      "Starting camera. Please allow camera access.";
+
+    if (!emmyQrScanner) {
+      emmyQrScanner = new Html5Qrcode("emmy-reader");
+    }
+
+    emmyQrScanner.start(
+      { facingMode: "environment" },
+      { fps: 10, qrbox: { width: 220, height: 220 } },
+      emmyHandleScan,
+      function () {}
+    ).then(function () {
+      emmyScannerRunning = true;
+      document.getElementById("emmy-scan-status").textContent =
+        "Point the camera at a QR code.";
+    }).catch(function (error) {
+      document.getElementById("emmy-scan-status").textContent =
+        "Camera unavailable or permission denied. Try allowing camera access or choose an image below.";
+      console.error(error);
+    });
+  }
+
+  function emmyStopCameraOnly() {
+    if (emmyQrScanner && emmyScannerRunning) {
+      emmyQrScanner.stop().then(function () {
+        emmyScannerRunning = false;
+      }).catch(function () {
+        emmyScannerRunning = false;
+      });
+    }
+  }
+
+  function emmyStopScanner() {
+    emmyStopCameraOnly();
+    document.getElementById("emmy-scan-area").style.display = "none";
+  }
+
+  document.getElementById("emmy-qr-file").addEventListener(
+    "change", function (event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+
+      if (!window.Html5Qrcode) {
+        document.getElementById("emmy-scan-status").textContent =
+          "Scanner library did not load. Check your internet connection.";
+        return;
+      }
+
+      if (!emmyQrScanner) {
+        emmyQrScanner = new Html5Qrcode("emmy-reader");
+      }
+
+      document.getElementById("emmy-scan-status").textContent =
+        "Reading QR code from image...";
+
+      emmyQrScanner.scanFile(file, true).then(
+        emmyHandleScan
+      ).catch(function () {
+        document.getElementById("emmy-scan-status").textContent =
+          "Could not read a QR code from that image. Try a clearer image.";
+      });
+    }
+  );
+</script>
+<!-- END EMMMY PRINT QR FEATURES -->
+</body>
+</html>
+
 </body>
 </html>

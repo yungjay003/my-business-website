@@ -1,129 +1,1226 @@
 
-<!-- SERVICES SECTION -->
-<section class="services-section" id="services">
-  <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <div class="section-heading">
-      <span class="eyebrow">What We Do</span>
-      <h2>Our Professional Services</h2>
+  <meta name="description" content="EMMY PRINT - Professional graphic design, printing, branding, flex banners, 3D T-shirt printing, typing and business printing services.">
+  <meta name="theme-color" content="#11112b">
+
+  <title>EMMY PRINT | Creative Design & Printing Studio</title>
+
+  <style>
+    :root {
+      --dark: #11112b;
+      --dark2: #1b1b40;
+      --purple: #7856ff;
+      --pink: #ff5caa;
+      --orange: #ffb454;
+      --white: #ffffff;
+      --light: #f7f7fc;
+      --text: #282843;
+      --muted: #74748d;
+      --border: #e9e8f3;
+      --green: #25d366;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: rgba(17, 17, 43, 0.97);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      color: white;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--pink);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #eeeeff;
+      font-size: 13px;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--pink);
+    }
+
+    .nav-cta {
+      background: var(--purple);
+      padding: 10px 17px;
+      border-radius: 7px;
+      color: white !important;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.25s;
+      text-align: center;
+      border: 0;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(120deg, var(--purple), #9b48ef);
+      box-shadow: 0 8px 22px rgba(120,86,255,0.25);
+    }
+
+    .btn-light {
+      color: var(--dark);
+      background: white;
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(255,92,170,0.25), transparent 28%),
+        radial-gradient(circle at 70% 85%, rgba(120,86,255,0.35), transparent 30%),
+        linear-gradient(135deg, #11112b, #242050);
+      padding: 105px 0 110px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--pink);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 65px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, #ff75b9, #b4a2ff, #ffbf72);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: #d6d6ed;
+      max-width: 580px;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      color: #c6c5e2;
+      font-size: 12px;
+      margin-top: 25px;
+    }
+
+    .creative-board {
+      position: relative;
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .art-card {
+      width: 290px;
+      height: 345px;
+      background: linear-gradient(145deg, #ff7db9, #7856ff 65%, #29275b);
+      border-radius: 22px;
+      transform: rotate(-5deg);
+      padding: 25px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .art-card::before {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      top: -70px;
+      right: -65px;
+    }
+
+    .art-card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 25px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      bottom: -85px;
+      left: -55px;
+    }
+
+    .art-label {
+      position: relative;
+      z-index: 1;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .art-title {
+      position: relative;
+      z-index: 1;
+      margin-top: 65px;
+      font-size: 42px;
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .art-bottom {
+      position: absolute;
+      z-index: 1;
+      bottom: 25px;
+      left: 25px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .floating-tag {
+      position: absolute;
+      z-index: 2;
+      background: white;
+      color: var(--dark);
+      padding: 13px 17px;
+      border-radius: 12px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .tag-one {
+      top: 35px;
+      right: 0;
+      transform: rotate(5deg);
+    }
+
+    .tag-two {
+      bottom: 35px;
+      left: 0;
+      transform: rotate(-5deg);
+    }
+
+    /* SERVICE STRIP */
+
+    .service-strip {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+
+    .strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      color: var(--dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .strip-inner span {
+      color: var(--purple);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--purple);
+      margin-bottom: 10px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.2;
+      color: var(--dark);
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* SERVICES */
+
+    .services-section {
+      background: var(--light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 28px 25px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(35,25,90,0.09);
+    }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0ecff;
+      font-size: 27px;
+      margin-bottom: 20px;
+    }
+
+    .service-card:nth-child(3n+2) .service-icon {
+      background: #fff0f7;
+    }
+
+    .service-card:nth-child(3n) .service-icon {
+      background: #fff5e8;
+    }
+
+    .service-card h3 {
+      color: var(--dark);
+      font-size: 18px;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .service-link {
+      color: var(--purple);
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio-section {
+      background: white;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      transition: transform 0.25s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio-art {
+      min-height: 235px;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .portfolio-art strong {
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .art-flyer {
+      background: radial-gradient(circle at top right, #ffb454, transparent 40%),
+                  linear-gradient(135deg, #4c24b8, #e34c9a);
+    }
+
+    .art-brand {
+      background: linear-gradient(135deg, #10112c, #384b86);
+    }
+
+    .art-print {
+      background: radial-gradient(circle at bottom left, #ff91c9, transparent 45%),
+                  linear-gradient(135deg, #ef6b40, #8e2de2);
+    }
+
+    .portfolio-info {
+      padding: 22px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 17px;
+      color: var(--dark);
+      margin-bottom: 7px;
+    }
+
+    .portfolio-info p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .portfolio-note {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 25px;
+      font-size: 12px;
+    }
+
+    /* ABOUT */
+
+    .about-section {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-visual {
+      min-height: 350px;
+      border-radius: 20px;
+      padding: 40px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.25), transparent 30%),
+        linear-gradient(140deg, #7856ff, #ff5caa);
+    }
+
+    .about-visual .big-text {
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -3px;
+    }
+
+    .about-visual p {
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .about-copy .eyebrow {
+      color: var(--purple);
+    }
+
+    .about-copy h2 {
+      color: var(--dark);
+      font-size: clamp(29px, 4vw, 42px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .about-list {
+      list-style: none;
+      margin: 23px 0 28px;
+    }
+
+    .about-list li {
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--dark);
+    }
+
+    .about-list li span {
+      color: var(--purple);
+      margin-right: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding: 85px 0;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,92,170,0.2), transparent 25%),
+        linear-gradient(135deg, #11112b, #282056);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-section .eyebrow {
+      color: #ff8fc6;
+    }
+
+    .contact-section h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .contact-section p {
+      color: #d4d3e9;
+      max-width: 620px;
+      margin: 0 auto 28px;
+      font-size: 15px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-btn {
+      background: var(--green);
+      color: #083b1a;
+    }
+
+    .contact-number {
+      margin-top: 23px;
+      font-size: 13px;
+      color: #d4d3e9;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0b0b20;
+      color: #c7c6dd;
+      padding: 35px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo {
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .footer-logo span {
+      color: var(--pink);
+    }
+
+    footer p {
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #c7c6dd;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: var(--pink);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.8fr;
+        gap: 25px;
+      }
+
+      .art-card {
+        width: 240px;
+        height: 310px;
+      }
+
+      .art-title {
+        font-size: 35px;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      .about-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        padding: 16px 0;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .nav-cta {
+        padding: 7px 10px;
+      }
+
+      .hero {
+        padding: 70px 0 60px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+
+      .creative-board {
+        min-height: 350px;
+        margin-top: 10px;
+      }
+
+      .art-card {
+        width: 250px;
+        height: 305px;
+      }
+
+      .tag-one {
+        right: 0;
+      }
+
+      .tag-two {
+        left: 0;
+      }
+
+      section.content-section,
+      .contact-section {
+        padding: 60px 0;
+      }
+
+      .services-grid,
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+
+      .portfolio-art {
+        min-height: 210px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 280px;
+        padding: 30px;
+      }
+
+      .strip-inner {
+        gap: 12px 20px;
+        font-size: 11px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container navbar">
+
+      <a href="#home" class="logo">
+        EMMMY <span>PRINT.</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Contact Us</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+          <span class="eyebrow">Creative Design Studio</span>
+
+          <h1>
+            We Turn Your Ideas Into
+            <span>Amazing Designs.</span>
+          </h1>
+
+          <p>
+            Welcome to EMMMY PRINT — your creative partner for graphic
+            design, printing, branding, custom apparel, banners and
+            professional document services. We make your ideas stand out.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn btn-primary"
+               href="https://wa.me/2348128848068"
+               target="_blank"
+               rel="noopener noreferrer">
+              Start Your Project ↗
+            </a>
+
+            <a class="btn btn-outline" href="#portfolio">
+              Explore Our Work
+            </a>
+          </div>
+
+          <p class="hero-note">
+            ✦ Creative ideas · Quality printing · Professional service
+          </p>
+        </div>
+
+        <div class="creative-board" aria-label="Creative design showcase">
+
+          <div class="art-card">
+            <div class="art-label">EMMMY PRINT STUDIO</div>
+
+            <div class="art-title">
+              THINK.<br>
+              CREATE.<br>
+              INSPIRE.
+            </div>
+
+            <div class="art-bottom">
+              DESIGN THAT SPEAKS
+            </div>
+          </div>
+
+          <div class="floating-tag tag-one">
+            🎨 Creative Design
+          </div>
+
+          <div class="floating-tag tag-two">
+            ✨ Your Brand, Elevated
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUICK INTRO -->
+    <div class="service-strip">
+      <div class="container strip-inner">
+        <div><span>✦</span> Graphic Design</div>
+        <div><span>✦</span> Printing</div>
+        <div><span>✦</span> Branding</div>
+        <div><span>✦</span> Custom Apparel</div>
+        <div><span>✦</span> Document Services</div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="content-section services-section" id="services">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">What We Do</span>
+          <h2>Creative Solutions for Every Need</h2>
+          <p>
+            From stunning graphic designs to professional printing,
+            we provide creative solutions for individuals, businesses,
+            churches, schools and special events.
+          </p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Graphic Design</h3>
+            <p>
+              Creative and professional designs for businesses,
+              events, advertisements, social media and personal projects.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20graphic%20design%20services." target="_blank" rel="noopener noreferrer">Request a Design ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">⌨️</div>
+            <h3>Typing Services</h3>
+            <p>
+              Typing of letters, assignments, reports, CVs, proposals,
+              projects and other business or school documents.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20typing%20services." target="_blank" rel="noopener noreferrer">Request Typing ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🖨️</div>
+            <h3>General Printing</h3>
+            <p>
+              Quality colour and black-and-white printing for documents,
+              business materials, school work and promotional items.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20printing%20services." target="_blank" rel="noopener noreferrer">Request Printing ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">👕</div>
+            <h3>3D Polo & T-Shirt Printing</h3>
+            <p>
+              Custom-branded polo shirts and T-shirts for businesses,
+              churches, schools, teams, celebrations and events.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%203D%20polo%20or%20T-shirt%20printing." target="_blank" rel="noopener noreferrer">Order Custom Wear ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🪧</div>
+            <h3>Flex Printing & Banners</h3>
+            <p>
+              Promotional banners, event backdrops, business signage
+              and advertising materials designed to attract attention.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20flex%20printing%20or%20a%20banner." target="_blank" rel="noopener noreferrer">Order a Banner ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💳</div>
+            <h3>Complimentary Cards</h3>
+            <p>
+              Stylish complimentary cards for hotels, restaurants,
+              businesses, organisations and professional services.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20complimentary%20cards." target="_blank" rel="noopener noreferrer">Order Cards ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📇</div>
+            <h3>Business Cards</h3>
+            <p>
+              Memorable business card designs and printing to help
+              you promote your brand and connect with customers.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20business%20cards." target="_blank" rel="noopener noreferrer">Order Business Cards ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📰</div>
+            <h3>Flyers & Posters</h3>
+            <p>
+              Attractive promotional designs for church programmes,
+              birthdays, weddings, product launches and advertisements.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20flyer%20or%20poster%20design." target="_blank" rel="noopener noreferrer">Order a Flyer ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💌</div>
+            <h3>Invitation Cards</h3>
+            <p>
+              Beautiful invitation cards for weddings, birthdays,
+              anniversaries, ceremonies and special occasions.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20invitation%20cards." target="_blank" rel="noopener noreferrer">Order Invitations ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📄</div>
+            <h3>Photocopying & Scanning</h3>
+            <p>
+              Convenient document photocopying and scanning for
+              students, professionals, offices and businesses.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20photocopying%20or%20scanning." target="_blank" rel="noopener noreferrer">Make an Enquiry ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Lamination Services</h3>
+            <p>
+              Lamination for certificates, identification cards,
+              important documents and other printed materials.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20lamination%20services." target="_blank" rel="noopener noreferrer">Make an Enquiry ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🏷️</div>
+            <h3>Branding & Product Labels</h3>
+            <p>
+              Logo design, product labels, stickers and promotional
+              materials to help your business build a consistent identity.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20branding%20or%20product%20labels." target="_blank" rel="noopener noreferrer">Build Your Brand ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📚</div>
+            <h3>Document Formatting</h3>
+            <p>
+              Professional formatting for CVs, reports, project work,
+              proposals and other documents.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20document%20formatting." target="_blank" rel="noopener noreferrer">Format My Document ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📣</div>
+            <h3>Church & Event Designs</h3>
+            <p>
+              Event flyers, programme designs, church banners,
+              invitations and other promotional materials.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20church%20or%20event%20designs." target="_blank" rel="noopener noreferrer">Plan Your Design ↗</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🛍️</div>
+            <h3>Custom Promotional Materials</h3>
+            <p>
+              Personalised print materials for promotions, gifts,
+              business campaigns and special occasions.
+            </p>
+            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20custom%20promotional%20materials." target="_blank" rel="noopener noreferrer">Discuss Your Idea ↗</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="content-section portfolio-section" id="portfolio">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Creative Showcase</span>
+          <h2>Designs That Make an Impression</h2>
+          <p>
+            Explore examples of the creative styles and project
+            categories EMMMY PRINT can help you create.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-flyer">
+              <strong>MAKE<br>IT BOLD.</strong>
+            </div>
+            <div class="portfolio-info">
+              <h3>Flyer & Poster Design</h3>
+              <p>Eye-catching designs for businesses, events and promotions.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-brand">
+              <strong>YOUR<br>BRAND.<br>YOUR STORY.</strong>
+            </div>
+            <div class="portfolio-info">
+              <h3>Brand Identity</h3>
+              <p>Logos and visual identity concepts for businesses.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-print">
+              <strong>PRINT<br>YOUR<br>VISION.</strong>
+            </div>
+            <div class="portfolio-info">
+              <h3>Printing & Promotional Materials</h3>
+              <p>Creative print concepts for cards, banners and promotions.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="portfolio-note">
+          These are illustrative design previews, not photographs
+          of completed customer projects. Add your own work as your
+          portfolio grows.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="content-section about-section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-visual">
+          <div class="big-text">
+            YOUR<br>
+            IDEAS.<br>
+            OUR ART.
+          </div>
+          <p>CREATIVITY WITH PURPOSE — EMMMY PRINT</p>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">About Our Studio</span>
+
+          <h2>Creativity, Quality & Professional Service</h2>
+
+          <p>
+            EMMMY PRINT is a creative design and printing business
+            focused on helping individuals, businesses, organisations
+            and event planners present their ideas professionally.
+          </p>
+
+          <p>
+            From graphic design and branded materials to typing
+            and document services, we aim to make every project
+            clear, attractive and suited to the customer's needs.
+          </p>
+
+          <ul class="about-list">
+            <li><span>✓</span> Creative and thoughtful designs</li>
+            <li><span>✓</span> A wide range of design and print services</li>
+            <li><span>✓</span> Friendly customer communication</li>
+            <li><span>✓</span> Solutions for personal and business projects</li>
+          </ul>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/2348128848068"
+             target="_blank"
+             rel="noopener noreferrer">
+            Work With Us ↗
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+
+        <span class="eyebrow">Let's Create Something Great</span>
+
+        <h2>Have a Design or Printing Project?</h2>
+
+        <p>
+          Tell us what you have in mind. Contact EMMMY PRINT
+          to discuss your graphic design, typing, printing,
+          branding or promotional material needs.
+        </p>
+
+        <div class="contact-buttons">
+
+          <a class="btn whatsapp-btn"
+             href="https://wa.me/2348128848068"
+             target="_blank"
+             rel="noopener noreferrer">
+            Chat With Us on WhatsApp ↗
+          </a>
+
+          <a class="btn btn-outline" href="#services">
+            Explore Our Services
+          </a>
+
+        </div>
+
+        <div class="contact-number">
+          WhatsApp: +234 812 884 8068
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        <div class="footer-logo">EMMMY <span>PRINT.</span></div>
+        <p>Creative Design. Quality Printing. Professional Service.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
       <p>
-        Welcome to EMMMY PRINT! Your trusted destination for
-        creative design, quality printing, typing, branding and flex printing.
-        We bring your ideas to life at affordable prices.
+        &copy; <span id="year">2026</span> EMMMY PRINT.
+        All rights reserved.
       </p>
-    </div>
-
-    <div class="services-grid">
-
-      <article class="service-card">
-        <div class="service-icon">⌨️</div>
-        <h3>Typing Services</h3>
-        <p>
-          Professional typing of letters, assignments, reports,
-          projects, CVs, business documents and other materials.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🖨️</div>
-        <h3>General Printing</h3>
-        <p>
-          Quality black-and-white and colour printing for documents,
-          school materials, office work and business needs.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">👕</div>
-        <h3>3D Polo & T-Shirt Printing</h3>
-        <p>
-          Custom polo and T-shirt printing for businesses, churches,
-          schools, events, clubs and personal occasions.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🎨</div>
-        <h3>Flex Printing</h3>
-        <p>
-          Attractive flex banners, business signs, event backdrops
-          and promotional materials for your business or occasion.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">💳</div>
-        <h3>Complimentary Cards</h3>
-        <p>
-          Elegant complimentary cards for hotels, restaurants,
-          businesses, events and professional services.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📇</div>
-        <h3>Business Cards</h3>
-        <p>
-          Professional business card design and printing to help
-          you promote your brand and connect with customers.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📰</div>
-        <h3>Flyers & Posters</h3>
-        <p>
-          Creative flyers and posters for church programmes,
-          birthdays, weddings, businesses and special events.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">💌</div>
-        <h3>Invitation Cards</h3>
-        <p>
-          Beautiful invitation cards for weddings, birthdays,
-          anniversaries, church programmes and other celebrations.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📄</div>
-        <h3>Photocopying</h3>
-        <p>
-          Clear and reliable document photocopying for students,
-          offices, businesses and individuals.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">✨</div>
-        <h3>Lamination Services</h3>
-        <p>
-          Protect important documents, certificates, identification
-          cards and other printed materials with lamination.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">🏷️</div>
-        <h3>Graphic Design & Branding</h3>
-        <p>
-          Logos, promotional designs, product labels and branded
-          materials to give your business a professional identity.
-        </p>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon">📚</div>
-        <h3>Document Preparation</h3>
-        <p>
-          Document formatting, CV preparation, project formatting,
-          scanning and other document support services.
-        </p>
-      </article>
 
     </div>
-  </div>
-</section>
-<!-- END SERVICES SECTION -->
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>

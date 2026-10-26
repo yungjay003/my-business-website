@@ -1765,26 +1765,6 @@ section#services.section {
   );
 </script>
 <!-- END EMMMY PRINT QR FEATURES -->
-</body>
-</html>
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDFSLIvUWVWJcM50XnTnHyKaOso-sq9s6E",
-  authDomain: "emmy-print-11ca6.firebaseapp.com",
-  projectId: "emmy-print-11ca6",
-  storageBucket: "emmy-print-11ca6.firebasestorage.app",
-  messagingSenderId: "36805186092",
-  appId: "1:36805186092:web:566e8033fe66537dd37789"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-```html
 <!-- FIREBASE CUSTOMER AUTHENTICATION -->
 <script type="module">
   import { initializeApp } from
@@ -1835,59 +1815,67 @@ const app = initializeApp(firebaseConfig);
       "auth/too-many-requests":
         "Too many attempts. Please wait before trying again.",
       "auth/network-request-failed":
-        "Network error. Check your internet connection."
+        "Network error. Check your internet connection.",
+      "auth/operation-not-allowed":
+        "Email/password login is not enabled in Firebase."
     };
 
     return messages[error.code] ||
-      "We couldn't complete that request. Please check your details and try again.";
+      "Something went wrong. Please check your details and try again.";
   }
 
-  document.getElementById("account-signup").addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value;
+  document.getElementById("account-signup")
+    .addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
 
-    if (!email || !password) {
-      showMessage("Please enter your email and password.");
-      return;
-    }
+      if (!email || !password) {
+        showMessage("Please enter your email and password.");
+        return;
+      }
 
-    try {
-      showMessage("Creating your account...");
-      await createUserWithEmailAndPassword(auth, email, password);
-      passwordInput.value = "";
-      showMessage("Your account has been created successfully!");
-    } catch (error) {
-      showMessage(friendlyError(error));
-    }
-  });
+      try {
+        showMessage("Creating your account...");
+        await createUserWithEmailAndPassword(auth, email, password);
+        passwordInput.value = "";
+        showMessage("Your account has been created successfully!");
+      } catch (error) {
+        showMessage(friendlyError(error));
+        console.error("Registration error:", error.code);
+      }
+    });
 
-  document.getElementById("account-login").addEventListener("click", async () => {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value;
+  document.getElementById("account-login")
+    .addEventListener("click", async () => {
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
 
-    if (!email || !password) {
-      showMessage("Please enter your email and password.");
-      return;
-    }
+      if (!email || !password) {
+        showMessage("Please enter your email and password.");
+        return;
+      }
 
-    try {
-      showMessage("Logging you in...");
-      await signInWithEmailAndPassword(auth, email, password);
-      passwordInput.value = "";
-      showMessage("You are now logged in!");
-    } catch (error) {
-      showMessage(friendlyError(error));
-    }
-  });
+      try {
+        showMessage("Logging you in...");
+        await signInWithEmailAndPassword(auth, email, password);
+        passwordInput.value = "";
+        showMessage("You are now logged in!");
+      } catch (error) {
+        showMessage(friendlyError(error));
+        console.error("Login error:", error.code);
+      }
+    });
 
-  document.getElementById("account-logout").addEventListener("click", async () => {
-    try {
-      await signOut(auth);
-      showMessage("You have logged out successfully.");
-    } catch (error) {
-      showMessage("Logout failed. Please try again.");
-    }
-  });
+  document.getElementById("account-logout")
+    .addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+        showMessage("You have logged out successfully.");
+      } catch (error) {
+        showMessage("Logout failed. Please try again.");
+        console.error("Logout error:", error.code);
+      }
+    });
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -1901,5 +1889,7 @@ const app = initializeApp(firebaseConfig);
     }
   });
 </script>
+<!-- END FIREBASE CUSTOMER AUTHENTICATION -->
+
 </body>
 </html>

@@ -1,16 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="yung jay ooo 1 offers creative graphic design, printing and branding services. Contact us to discuss your next project.">
-
+  <meta name="description" content="EMMMY PRINT offers creative graphic design, printing and branding services. Contact us to discuss your next project.">
   <meta name="theme-color" content="#102c46">
-
-  <title>yung jayy ooo
-  T | Graphic Design & Printing</title>
+  <title>EMMMY PRINT | Graphic Design & Printing</title>
 
   <style>
     :root {
@@ -51,8 +47,6 @@
       max-width: 1200px;
       margin: auto;
     }
-
-    /* HEADER */
 
     header {
       background: var(--navy);
@@ -100,8 +94,6 @@
       color: var(--green);
     }
 
-    /* BUTTONS */
-
     .button {
       display: inline-block;
       padding: 13px 24px;
@@ -133,8 +125,6 @@
       color: var(--navy);
     }
 
-    /* HERO */
-
     .hero {
       background:
         radial-gradient(
@@ -143,7 +133,6 @@
           transparent 35%
         ),
         linear-gradient(135deg, #102c46, #174b70);
-
       color: var(--white);
       padding: 110px 0;
     }
@@ -185,8 +174,6 @@
       flex-wrap: wrap;
     }
 
-    /* GENERAL SECTIONS */
-
     section {
       padding: 85px 0;
     }
@@ -213,13 +200,13 @@
       color: var(--muted);
     }
 
-    /* SERVICES */
-
-    .services-section {
+    .services-section,
+    .portfolio-section {
       background: #f8fafc;
     }
 
-    .services-grid {
+    .services-grid,
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -262,8 +249,6 @@
       font-size: 15px;
     }
 
-    /* ABOUT */
-
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -284,7 +269,8 @@
       margin-bottom: 15px;
     }
 
-    .about-panel p {
+    .about-panel p,
+    .about-copy p {
       color: var(--muted);
     }
 
@@ -296,20 +282,7 @@
     }
 
     .about-copy p {
-      color: var(--muted);
       margin-bottom: 16px;
-    }
-
-    /* PORTFOLIO */
-
-    .portfolio-section {
-      background: #f8fafc;
-    }
-
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
     }
 
     .portfolio-card {
@@ -365,8 +338,6 @@
       font-size: 14px;
     }
 
-    /* CONTACT */
-
     .contact-section {
       background: var(--navy);
       color: var(--white);
@@ -390,8 +361,6 @@
       color: #d6e3ef;
     }
 
-    /* FOOTER */
-
     footer {
       background: #0b2033;
       color: #e4edf5;
@@ -403,8 +372,6 @@
     footer p + p {
       margin-top: 5px;
     }
-
-    /* MOBILE */
 
     @media (max-width: 850px) {
       .container {
@@ -487,13 +454,9 @@
 </head>
 
 <body>
-
   <header>
     <div class="container navbar">
-
-      <a class="logo" href="#home">
-        EMMMY <span>PRINT</span>
-      </a>
+      <a class="logo" href="#home">EMMMY <span>PRINT</span></a>
 
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
@@ -502,17 +465,13 @@
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
       </nav>
-
     </div>
   </header>
 
   <main>
-
-    <!-- HERO -->
     <section class="hero" id="home">
       <div class="container">
         <div class="hero-content">
-
           <span class="eyebrow">Creativity • Quality • Service</span>
 
           <h1>
@@ -534,15 +493,12 @@
               Explore Our Services
             </a>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
     <section class="services-section" id="services">
       <div class="container">
-
         <div class="section-heading">
           <span class="eyebrow">What We Do</span>
           <h2>Our Services</h2>
@@ -553,7 +509,6 @@
         </div>
 
         <div class="services-grid">
-
           <article class="service-card">
             <div class="service-icon" aria-hidden="true">✏️</div>
             <h3>Graphic Design</h3>
@@ -580,15 +535,12 @@
               identity and promote their products and services.
             </p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container about-grid">
-
         <div class="about-panel">
           <h3>Good Design Makes a Difference</h3>
           <p>
@@ -599,7 +551,6 @@
 
         <div class="about-copy">
           <span class="eyebrow">About Us</span>
-
           <h2>Meet EMMMY PRINT</h2>
 
           <p>
@@ -617,14 +568,11 @@
             Let's Work Together
           </a>
         </div>
-
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
     <section class="portfolio-section" id="portfolio">
       <div class="container">
-
         <div class="section-heading">
           <span class="eyebrow">Creative Showcase</span>
           <h2>Explore Our Work</h2>
@@ -635,10 +583,9 @@
         </div>
 
         <div class="portfolio-grid">
-
           <article class="portfolio-card">
             <div class="portfolio-visual">
-              <strong>FLYERS<br>& POSTERS</strong>
+              <strong>FLYERS<br>&amp; POSTERS</strong>
             </div>
             <div class="portfolio-info">
               <h3>Flyer & Poster Design</h3>
@@ -671,21 +618,17 @@
               </p>
             </div>
           </article>
-
         </div>
 
         <p class="portfolio-note">
           These are category previews. We can replace them with images
           of your actual completed projects.
         </p>
-
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section class="contact-section" id="contact">
       <div class="container">
-
         <div class="section-heading">
           <span class="eyebrow">Get in Touch</span>
           <h2>Have a Project in Mind?</h2>
@@ -699,26 +642,23 @@
           <p>Tell us what you need, and let's discuss your project.</p>
         </div>
 
-        <!-- Confirm this WhatsApp number is yours before publishing. -->
+        <!-- WhatsApp contact number -->
         <a
           class="button button-primary"
-          href="https://wa.me/2349074239739"
+          href="https://wa.me/2348128848068"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Contact EMMMY PRINT on WhatsApp"
         >
           Chat With Us on WhatsApp
         </a>
-
       </div>
     </section>
-
   </main>
 
   <footer>
     <p>&copy; 2026 EMMMY PRINT. All rights reserved.</p>
     <p>Creative Design. Quality Service. Professional Results.</p>
   </footer>
-
 </body>
 </html>

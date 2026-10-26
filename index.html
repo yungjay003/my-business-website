@@ -778,7 +778,103 @@
         text-align: center;
       }
     }
-  </style>
+  
+/* ===== EMMY PRINT COOL DESIGN BACKGROUND ===== */
+
+body {
+    background: #0b1020;
+    color: #f8fafc;
+}
+
+section {
+    background: linear-gradient(
+        135deg,
+        #10172a 0%,
+        #17152e 50%,
+        #10243a 100%
+    );
+    color: #f8fafc;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.section-heading h2,
+.section-heading p,
+.section-heading .eyebrow {
+    color: #f8fafc;
+}
+
+.service-card,
+.portfolio-card {
+    background: linear-gradient(
+        145deg,
+        #1e293b,
+        #172033
+    );
+    color: #f8fafc;
+    border: 1px solid #374151;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover,
+.portfolio-card:hover {
+    transform: translateY(-7px);
+    border-color: #a855f7;
+    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
+}
+
+.service-card h3,
+.portfolio-card h3,
+.service-card p,
+.portfolio-card p {
+    color: #f8fafc;
+}
+
+.service-icon {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+header {
+    background: rgba(11, 16, 32, 0.97);
+    border-bottom: 1px solid #374151;
+}
+
+footer {
+    background: #080c18;
+    color: #e2e8f0;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+button,
+.button {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+button:hover,
+.button:hover {
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .service-card,
+    .portfolio-card {
+        border-radius: 14px;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -788,7 +884,7 @@
     <div class="container navbar">
 
       <a href="#home" class="logo">
-        EMMMY <span>PRINT.</span>
+        EMMY <span>PRINT.</span>
       </a>
 
       <nav aria-label="Main navigation">

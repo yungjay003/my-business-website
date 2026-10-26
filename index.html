@@ -4,82 +4,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="EMMY PRINT - Professional graphic design, printing, branding, flex banners, 3D T-shirt printing, typing and business printing services.">
-  <meta name="theme-color" content="#11112b">
-
-  <title>EMMY PRINT | Creative Design & Printing Studio</title>
+  <meta name="theme-color" content="#090b18">
+  <meta name="description" content="EMMMY PRINT offers graphic design, printing, typing, branding, flex banners, custom T-shirts and professional printing services.">
+  <title>EMMMY PRINT | Creative Design & Printing Studio</title>
 
   <style>
     :root {
-      --dark: #11112b;
-      --dark2: #1b1b40;
-      --purple: #7856ff;
-      --pink: #ff5caa;
-      --orange: #ffb454;
-      --white: #ffffff;
-      --light: #f7f7fc;
-      --text: #282843;
-      --muted: #74748d;
-      --border: #e9e8f3;
-      --green: #25d366;
+      --bg: #090b18;
+      --bg2: #101329;
+      --card: #151a32;
+      --purple: #8657ff;
+      --pink: #ff4fa3;
+      --cyan: #45d9ff;
+      --white: #f8f9ff;
+      --muted: #a9b0cc;
+      --border: rgba(255,255,255,.12);
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
-      color: var(--text);
+      background:
+        radial-gradient(ellipse at 10% 5%, rgba(134,87,255,.18), transparent 35%),
+        radial-gradient(ellipse at 90% 25%, rgba(255,79,163,.12), transparent 32%),
+        var(--bg);
+      color: var(--white);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
+      color: inherit;
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
+    button, a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
-      width: 90%;
-      max-width: 1180px;
+      width: min(1120px, 90%);
       margin: auto;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     /* NAVIGATION */
 
     header {
-      background: rgba(17, 17, 43, 0.97);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+      background: rgba(9,11,24,.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
     }
 
     .navbar {
-      min-height: 78px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
     .logo {
       font-size: 25px;
       font-weight: 900;
-      color: white;
-      letter-spacing: 1px;
+      letter-spacing: -.8px;
       white-space: nowrap;
     }
 
@@ -87,357 +90,304 @@
       color: var(--pink);
     }
 
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
-      flex-wrap: wrap;
+      gap: 24px;
+      list-style: none;
     }
 
-    nav a {
-      color: #eeeeff;
+    .nav-links a {
+      color: #e0e4f5;
       font-size: 13px;
       font-weight: 700;
-      transition: color 0.2s;
+      transition: .25s;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: var(--pink);
     }
 
-    .nav-cta {
-      background: var(--purple);
-      padding: 10px 17px;
-      border-radius: 7px;
-      color: white !important;
-    }
-
-    /* BUTTONS */
-
     .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-size: 14px;
-      font-weight: 800;
-      transition: 0.25s;
-      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
       border: 0;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
     }
 
     .btn:hover {
       transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(134,87,255,.25);
     }
 
     .btn-primary {
+      background: linear-gradient(100deg, var(--purple), var(--pink));
       color: white;
-      background: linear-gradient(120deg, var(--purple), #9b48ef);
-      box-shadow: 0 8px 22px rgba(120,86,255,0.25);
-    }
-
-    .btn-light {
-      color: var(--dark);
-      background: white;
     }
 
     .btn-outline {
+      border: 1px solid rgba(255,255,255,.25);
       color: white;
-      border: 1px solid rgba(255,255,255,0.5);
+      background: rgba(255,255,255,.04);
     }
 
     /* HERO */
 
     .hero {
       position: relative;
+      padding: 105px 0 95px;
       overflow: hidden;
-      color: white;
-      background:
-        radial-gradient(circle at 85% 25%, rgba(255,92,170,0.25), transparent 28%),
-        radial-gradient(circle at 70% 85%, rgba(120,86,255,0.35), transparent 30%),
-        linear-gradient(135deg, #11112b, #242050);
-      padding: 105px 0 110px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
+      grid-template-columns: 1.15fr .85fr;
       align-items: center;
+      gap: 55px;
     }
 
     .eyebrow {
       display: inline-block;
-      color: var(--pink);
-      text-transform: uppercase;
-      font-size: 12px;
+      color: var(--cyan);
+      font-size: 11px;
       font-weight: 900;
-      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
       margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 5vw, 65px);
-      line-height: 1.1;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(90deg, #ff75b9, #b4a2ff, #ffbf72);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -2.8px;
+      margin-bottom: 23px;
     }
 
     .hero p {
-      color: #d6d6ed;
-      max-width: 580px;
+      color: var(--muted);
+      max-width: 560px;
       font-size: 16px;
       margin-bottom: 30px;
     }
 
-    .hero-buttons {
+    .hero-actions {
       display: flex;
-      gap: 13px;
       flex-wrap: wrap;
+      gap: 13px;
     }
 
     .hero-note {
-      color: #c6c5e2;
-      font-size: 12px;
       margin-top: 25px;
-    }
-
-    .creative-board {
-      position: relative;
-      min-height: 390px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .art-card {
-      width: 290px;
-      height: 345px;
-      background: linear-gradient(145deg, #ff7db9, #7856ff 65%, #29275b);
-      border-radius: 22px;
-      transform: rotate(-5deg);
-      padding: 25px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .art-card::before {
-      content: "";
-      position: absolute;
-      width: 210px;
-      height: 210px;
-      background: rgba(255,255,255,0.2);
-      border-radius: 50%;
-      top: -70px;
-      right: -65px;
-    }
-
-    .art-card::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border: 25px solid rgba(255,255,255,0.15);
-      border-radius: 50%;
-      bottom: -85px;
-      left: -55px;
-    }
-
-    .art-label {
-      position: relative;
-      z-index: 1;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 3px;
-    }
-
-    .art-title {
-      position: relative;
-      z-index: 1;
-      margin-top: 65px;
-      font-size: 42px;
-      line-height: 0.98;
-      font-weight: 900;
-      letter-spacing: -2px;
-    }
-
-    .art-bottom {
-      position: absolute;
-      z-index: 1;
-      bottom: 25px;
-      left: 25px;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    .floating-tag {
-      position: absolute;
-      z-index: 2;
-      background: white;
-      color: var(--dark);
-      padding: 13px 17px;
-      border-radius: 12px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.18);
       font-size: 12px;
-      font-weight: 900;
+      color: #929bbd;
     }
 
-    .tag-one {
-      top: 35px;
-      right: 0;
-      transform: rotate(5deg);
+    .design-showcase {
+      min-height: 370px;
+      position: relative;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(134,87,255,.35), transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(255,79,163,.27), transparent 40%),
+        linear-gradient(140deg, #191e3c, #0e1022);
     }
 
-    .tag-two {
-      bottom: 35px;
-      left: 0;
-      transform: rotate(-5deg);
+    .showcase-orb {
+      width: 190px;
+      height: 190px;
+      border-radius: 48px;
+      transform: rotate(-12deg);
+      background: linear-gradient(140deg, var(--purple), var(--pink));
+      box-shadow: 0 0 90px rgba(134,87,255,.4);
+      display: grid;
+      place-items: center;
     }
 
-    /* SERVICE STRIP */
-
-    .service-strip {
-      background: white;
-      border-bottom: 1px solid var(--border);
-      padding: 22px 0;
+    .showcase-orb span {
+      font-size: 66px;
+      font-weight: 1000;
+      color: white;
+      transform: rotate(12deg);
+      text-shadow: 4px 6px 0 rgba(0,0,0,.18);
     }
 
-    .strip-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-      color: var(--dark);
-      font-size: 13px;
+    .floating-label {
+      position: absolute;
+      padding: 12px 17px;
+      background: rgba(20,24,49,.94);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 12px;
       font-weight: 800;
+      box-shadow: 0 10px 35px rgba(0,0,0,.25);
     }
 
-    .strip-inner span {
-      color: var(--purple);
+    .label-one { top: 45px; left: 22px; }
+    .label-two { bottom: 45px; right: 20px; }
+    .label-three { top: 100px; right: 15px; }
+
+    /* STATS */
+
+    .stats {
+      padding: 25px 0;
+      background: rgba(255,255,255,.025);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 20px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 22px;
+      color: white;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
     }
 
     /* GENERAL SECTIONS */
 
-    section.content-section {
-      padding: 85px 0;
+    section {
+      scroll-margin-top: 85px;
+    }
+
+    .section {
+      padding: 90px 0;
     }
 
     .section-heading {
-      max-width: 700px;
-      margin: 0 auto 45px;
       text-align: center;
+      max-width: 720px;
+      margin: 0 auto 48px;
     }
 
     .section-heading .eyebrow {
-      color: var(--purple);
       margin-bottom: 10px;
     }
 
     .section-heading h2 {
-      font-size: clamp(29px, 4vw, 43px);
+      font-size: clamp(30px, 4vw, 44px);
       line-height: 1.2;
-      color: var(--dark);
       letter-spacing: -1px;
       margin-bottom: 15px;
     }
 
     .section-heading p {
+      font-size: 14px;
       color: var(--muted);
-      font-size: 15px;
     }
 
     /* SERVICES */
 
-    .services-section {
-      background: var(--light);
-    }
-
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .service-card {
-      background: white;
+      position: relative;
+      padding: 27px;
       border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 28px 25px;
-      transition: transform 0.25s, box-shadow 0.25s;
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(24,29,57,.96), rgba(15,18,37,.96));
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--purple), var(--pink), var(--cyan));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s;
     }
 
     .service-card:hover {
       transform: translateY(-7px);
-      box-shadow: 0 18px 40px rgba(35,25,90,0.09);
+      border-color: rgba(134,87,255,.65);
+      box-shadow: 0 20px 45px rgba(0,0,0,.2);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
     }
 
     .service-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0ecff;
-      font-size: 27px;
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(140deg, rgba(134,87,255,.23), rgba(255,79,163,.14));
+      border: 1px solid rgba(255,255,255,.08);
+      font-size: 25px;
       margin-bottom: 20px;
     }
 
-    .service-card:nth-child(3n+2) .service-icon {
-      background: #fff0f7;
-    }
-
-    .service-card:nth-child(3n) .service-icon {
-      background: #fff5e8;
-    }
-
     .service-card h3 {
-      color: var(--dark);
-      font-size: 18px;
-      line-height: 1.35;
+      font-size: 17px;
       margin-bottom: 10px;
     }
 
     .service-card p {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.8;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .service-link {
-      color: var(--purple);
-      font-weight: 800;
+      color: #c5aaff;
       font-size: 12px;
+      font-weight: 800;
+    }
+
+    .service-link:hover {
+      color: var(--pink);
     }
 
     /* PORTFOLIO */
 
     .portfolio-section {
-      background: white;
+      background: linear-gradient(180deg, transparent, rgba(134,87,255,.055), transparent);
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
 
     .portfolio-card {
       overflow: hidden;
-      border-radius: 16px;
-      background: white;
+      border-radius: 18px;
+      background: var(--card);
       border: 1px solid var(--border);
-      transition: transform 0.25s;
+      transition: transform .3s;
     }
 
     .portfolio-card:hover {
@@ -445,104 +395,102 @@
     }
 
     .portfolio-art {
-      min-height: 235px;
-      padding: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 210px;
+      display: grid;
+      place-items: center;
       text-align: center;
-      color: white;
-      overflow: hidden;
+      padding: 25px;
+      font-size: 24px;
+      font-weight: 1000;
+      line-height: 1.3;
+      letter-spacing: 1px;
     }
 
-    .portfolio-art strong {
-      font-size: 30px;
-      line-height: 1.05;
-      letter-spacing: -1px;
+    .art-one {
+      background: linear-gradient(135deg, #5724bb, #ee3e98);
     }
 
-    .art-flyer {
-      background: radial-gradient(circle at top right, #ffb454, transparent 40%),
-                  linear-gradient(135deg, #4c24b8, #e34c9a);
+    .art-two {
+      background: linear-gradient(135deg, #0c7d91, #53e2d1);
+      color: #071c2a;
     }
 
-    .art-brand {
-      background: linear-gradient(135deg, #10112c, #384b86);
+    .art-three {
+      background: linear-gradient(135deg, #ff9b35, #f33c6c);
     }
 
-    .art-print {
-      background: radial-gradient(circle at bottom left, #ff91c9, transparent 45%),
-                  linear-gradient(135deg, #ef6b40, #8e2de2);
+    .art-four {
+      background: linear-gradient(135deg, #202b50, #6c7aff);
+    }
+
+    .art-five {
+      background: linear-gradient(135deg, #08785e, #92e65c);
+      color: #10251b;
+    }
+
+    .art-six {
+      background: linear-gradient(135deg, #4a183f, #c153d8);
     }
 
     .portfolio-info {
-      padding: 22px;
+      padding: 20px;
     }
 
     .portfolio-info h3 {
-      font-size: 17px;
-      color: var(--dark);
+      font-size: 15px;
       margin-bottom: 7px;
     }
 
     .portfolio-info p {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--muted);
     }
 
     .portfolio-note {
-      color: var(--muted);
       text-align: center;
-      margin-top: 25px;
+      color: var(--muted);
       font-size: 12px;
+      margin-top: 25px;
     }
 
     /* ABOUT */
 
-    .about-section {
-      background: var(--light);
-    }
-
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      grid-template-columns: .9fr 1.1fr;
       align-items: center;
+      gap: 55px;
     }
 
-    .about-visual {
-      min-height: 350px;
-      border-radius: 20px;
-      padding: 40px;
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    .about-art {
+      min-height: 340px;
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
       background:
-        radial-gradient(circle at 90% 10%, rgba(255,255,255,0.25), transparent 30%),
-        linear-gradient(140deg, #7856ff, #ff5caa);
+        radial-gradient(circle at 25% 25%, rgba(69,217,255,.17), transparent 40%),
+        radial-gradient(circle at 75% 75%, rgba(255,79,163,.2), transparent 45%),
+        #14182f;
+      display: grid;
+      place-items: center;
+      text-align: center;
     }
 
-    .about-visual .big-text {
-      font-size: clamp(42px, 5vw, 62px);
-      line-height: 1;
-      font-weight: 900;
-      letter-spacing: -3px;
+    .about-art strong {
+      display: block;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.1;
     }
 
-    .about-visual p {
-      margin-top: 20px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .about-copy .eyebrow {
-      color: var(--purple);
+    .about-art span {
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
     }
 
     .about-copy h2 {
-      color: var(--dark);
-      font-size: clamp(29px, 4vw, 42px);
+      font-size: clamp(30px, 4vw, 42px);
       line-height: 1.2;
       margin-bottom: 20px;
     }
@@ -550,110 +498,145 @@
     .about-copy p {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
     }
 
-    .about-list {
+    .check-list {
       list-style: none;
-      margin: 23px 0 28px;
+      margin: 22px 0 28px;
     }
 
-    .about-list li {
-      margin-bottom: 12px;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--dark);
+    .check-list li {
+      margin: 10px 0;
+      font-size: 13px;
+      color: #e2e5f7;
     }
 
-    .about-list li span {
-      color: var(--purple);
+    .check-list li::before {
+      content: "✓";
+      color: var(--cyan);
+      font-weight: 900;
       margin-right: 10px;
+    }
+
+    /* PROCESS */
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      padding: 25px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    .process-number {
+      font-size: 30px;
+      font-weight: 1000;
+      color: var(--purple);
+      margin-bottom: 10px;
+    }
+
+    .process-card h3 {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .process-card p {
+      font-size: 13px;
+      color: var(--muted);
     }
 
     /* CONTACT */
 
-    .contact-section {
-      padding: 85px 0;
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
       background:
-        radial-gradient(circle at 85% 15%, rgba(255,92,170,0.2), transparent 25%),
-        linear-gradient(135deg, #11112b, #282056);
-      color: white;
-      text-align: center;
+        radial-gradient(circle at 100% 0%, rgba(134,87,255,.18), transparent 40%),
+        linear-gradient(135deg, #151a34, #101226);
     }
 
-    .contact-section .eyebrow {
-      color: #ff8fc6;
-    }
-
-    .contact-section h2 {
-      font-size: clamp(30px, 4vw, 46px);
+    .contact-panel h2 {
+      font-size: clamp(28px, 4vw, 40px);
       line-height: 1.2;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
-    .contact-section p {
-      color: #d4d3e9;
-      max-width: 620px;
-      margin: 0 auto 28px;
-      font-size: 15px;
+    .contact-panel p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
     }
 
-    .contact-buttons {
+    .contact-details {
+      display: grid;
+      gap: 15px;
+      align-content: center;
+    }
+
+    .contact-item {
       display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
+      gap: 15px;
+      align-items: center;
+      padding: 17px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
     }
 
-    .whatsapp-btn {
-      background: var(--green);
-      color: #083b1a;
+    .contact-item .icon {
+      font-size: 23px;
     }
 
-    .contact-number {
-      margin-top: 23px;
+    .contact-item strong {
+      display: block;
       font-size: 13px;
-      color: #d4d3e9;
+    }
+
+    .contact-item span {
+      font-size: 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
     }
 
     /* FOOTER */
 
     footer {
-      background: #0b0b20;
-      color: #c7c6dd;
       padding: 35px 0;
+      border-top: 1px solid var(--border);
+      background: rgba(0,0,0,.15);
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
     }
 
-    .footer-logo {
-      color: white;
-      font-size: 20px;
-      font-weight: 900;
-    }
-
-    .footer-logo span {
-      color: var(--pink);
-    }
-
-    footer p {
+    .footer-inner p {
+      color: var(--muted);
       font-size: 12px;
     }
 
     .footer-links {
       display: flex;
-      gap: 17px;
       flex-wrap: wrap;
+      gap: 17px;
     }
 
     .footer-links a {
-      color: #c7c6dd;
+      color: #d9dcef;
       font-size: 12px;
     }
 
@@ -661,30 +644,64 @@
       color: var(--pink);
     }
 
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #20c76a;
+      color: white;
+      font-size: 29px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35);
+      transition: transform .2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
     /* MOBILE */
 
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr 0.8fr;
-        gap: 25px;
+    @media (max-width: 850px) {
+      .navbar {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
       }
 
-      .art-card {
-        width: 240px;
-        height: 310px;
+      .nav-links {
+        width: 100%;
+        gap: 17px;
+        flex-wrap: wrap;
       }
 
-      .art-title {
-        font-size: 35px;
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 70px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .design-showcase {
+        min-height: 310px;
       }
 
       .services-grid,
       .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      nav {
-        gap: 14px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .about-grid {
@@ -692,209 +709,105 @@
       }
     }
 
-    @media (max-width: 650px) {
-      .navbar {
-        padding: 16px 0;
-        flex-direction: column;
+    @media (max-width: 540px) {
+      .container {
+        width: 91%;
       }
 
-      nav {
-        justify-content: center;
-        gap: 13px;
+      .logo {
+        font-size: 23px;
       }
 
-      nav a {
-        font-size: 12px;
+      .nav-links {
+        gap: 12px 16px;
       }
 
-      .nav-cta {
-        padding: 7px 10px;
+      .nav-links a {
+        font-size: 11px;
       }
 
-      .hero {
-        padding: 70px 0 60px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
+      .nav-contact {
+        display: none;
       }
 
       .hero h1 {
-        letter-spacing: -1px;
+        letter-spacing: -1.6px;
       }
 
-      .creative-board {
-        min-height: 350px;
-        margin-top: 10px;
-      }
-
-      .art-card {
-        width: 250px;
-        height: 305px;
-      }
-
-      .tag-one {
-        right: 0;
-      }
-
-      .tag-two {
-        left: 0;
-      }
-
-      section.content-section,
-      .contact-section {
-        padding: 60px 0;
+      .hero p {
+        font-size: 14px;
       }
 
       .services-grid,
-      .portfolio-grid {
+      .portfolio-grid,
+      .process-grid {
         grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 32px;
       }
 
       .service-card {
-        padding: 25px;
+        padding: 23px;
       }
 
-      .portfolio-art {
-        min-height: 210px;
+      .stats-grid {
+        gap: 8px;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
+      .stat strong {
+        font-size: 18px;
       }
 
-      .about-visual {
-        min-height: 280px;
-        padding: 30px;
+      .stat span {
+        font-size: 10px;
       }
 
-      .strip-inner {
-        gap: 12px 20px;
-        font-size: 11px;
+      .contact-panel {
+        padding: 25px 20px;
       }
 
       .footer-inner {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+      }
+
+      .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
       }
     }
-  
-/* ===== EMMY PRINT COOL DESIGN BACKGROUND ===== */
-
-body {
-    background: #0b1020;
-    color: #f8fafc;
-}
-
-section {
-    background: linear-gradient(
-        135deg,
-        #10172a 0%,
-        #17152e 50%,
-        #10243a 100%
-    );
-    color: #f8fafc;
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
-.section-heading h2,
-.section-heading p,
-.section-heading .eyebrow {
-    color: #f8fafc;
-}
-
-.service-card,
-.portfolio-card {
-    background: linear-gradient(
-        145deg,
-        #1e293b,
-        #172033
-    );
-    color: #f8fafc;
-    border: 1px solid #374151;
-    border-radius: 18px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover,
-.portfolio-card:hover {
-    transform: translateY(-7px);
-    border-color: #a855f7;
-    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
-}
-
-.service-card h3,
-.portfolio-card h3,
-.service-card p,
-.portfolio-card p {
-    color: #f8fafc;
-}
-
-.service-icon {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
-    border-radius: 12px;
-    padding: 12px;
-}
-
-header {
-    background: rgba(11, 16, 32, 0.97);
-    border-bottom: 1px solid #374151;
-}
-
-footer {
-    background: #080c18;
-    color: #e2e8f0;
-}
-
-a {
-    transition: color 0.3s ease;
-}
-
-button,
-.button {
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-button:hover,
-.button:hover {
-    transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-    section {
-        padding-top: 55px;
-        padding-bottom: 55px;
-    }
-
-    .service-card,
-    .portfolio-card {
-        border-radius: 14px;
-    }
-}
-</style>
+  </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- NAVIGATION -->
   <header>
     <div class="container navbar">
-
-      <a href="#home" class="logo">
-        EMMY <span>PRINT.</span>
-      </a>
+      <a class="logo" href="#home">EMMMY <span>PRINT.</span></a>
 
       <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="nav-cta">Contact Us</a>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
 
+      <a class="btn btn-primary nav-contact"
+         href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20your%20services.">
+        Contact Us
+      </a>
     </div>
   </header>
 
@@ -904,88 +817,77 @@ button:hover,
     <section class="hero" id="home">
       <div class="container hero-grid">
 
-        <div class="hero-copy">
-          <span class="eyebrow">Creative Design Studio</span>
+        <div>
+          <span class="eyebrow">Creative Design • Quality Printing</span>
 
           <h1>
-            We Turn Your Ideas Into
-            <span>Amazing Designs.</span>
+            We Turn Your<br>
+            Ideas Into <span class="gradient-text">Reality.</span>
           </h1>
 
           <p>
-            Welcome to EMMMY PRINT — your creative partner for graphic
-            design, printing, branding, custom apparel, banners and
-            professional document services. We make your ideas stand out.
+            Welcome to EMMMY PRINT, your creative partner for outstanding
+            graphic design, professional printing, branding, custom apparel
+            and document services. We help your business stand out.
           </p>
 
-          <div class="hero-buttons">
+          <div class="hero-actions">
             <a class="btn btn-primary"
-               href="https://wa.me/2348128848068"
-               target="_blank"
-               rel="noopener noreferrer">
-              Start Your Project ↗
-            </a>
+               href="#services">Explore Our Services ↗</a>
 
-            <a class="btn btn-outline" href="#portfolio">
-              Explore Our Work
+            <a class="btn btn-outline"
+               href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20want%20to%20make%20an%20enquiry.">
+              Chat on WhatsApp
             </a>
           </div>
 
-          <p class="hero-note">
-            ✦ Creative ideas · Quality printing · Professional service
-          </p>
+          <div class="hero-note">
+            ✦ Creative ideas. Professional results. Excellent presentation.
+          </div>
         </div>
 
-        <div class="creative-board" aria-label="Creative design showcase">
+        <div class="design-showcase" aria-label="Creative design showcase">
+          <div class="floating-label label-one">✦ CREATIVE DESIGN</div>
+          <div class="floating-label label-three">✧ YOUR BRAND</div>
 
-          <div class="art-card">
-            <div class="art-label">EMMMY PRINT STUDIO</div>
-
-            <div class="art-title">
-              THINK.<br>
-              CREATE.<br>
-              INSPIRE.
-            </div>
-
-            <div class="art-bottom">
-              DESIGN THAT SPEAKS
-            </div>
+          <div class="showcase-orb">
+            <span>EP</span>
           </div>
 
-          <div class="floating-tag tag-one">
-            🎨 Creative Design
-          </div>
-
-          <div class="floating-tag tag-two">
-            ✨ Your Brand, Elevated
-          </div>
-
+          <div class="floating-label label-two">PRINT • CREATE • INSPIRE</div>
         </div>
 
       </div>
     </section>
 
-    <!-- QUICK INTRO -->
-    <div class="service-strip">
-      <div class="container strip-inner">
-        <div><span>✦</span> Graphic Design</div>
-        <div><span>✦</span> Printing</div>
-        <div><span>✦</span> Branding</div>
-        <div><span>✦</span> Custom Apparel</div>
-        <div><span>✦</span> Document Services</div>
+    <!-- BUSINESS HIGHLIGHTS -->
+    <div class="stats">
+      <div class="container stats-grid">
+        <div class="stat">
+          <strong>Creative</strong>
+          <span>Unique design concepts</span>
+        </div>
+        <div class="stat">
+          <strong>Professional</strong>
+          <span>Quality service delivery</span>
+        </div>
+        <div class="stat">
+          <strong>Customer First</strong>
+          <span>Solutions for your needs</span>
+        </div>
       </div>
     </div>
 
     <!-- SERVICES -->
-    <section class="content-section services-section" id="services">
+    <section class="section" id="services">
       <div class="container">
 
         <div class="section-heading">
           <span class="eyebrow">What We Do</span>
-          <h2>Creative Solutions for Every Need</h2>
+          <h2>Our <span class="gradient-text">Creative Services</span></h2>
           <p>
             From stunning graphic designs to professional printing,
-            we provide creative solutions for individuals, businesses,
+            discover creative solutions for individuals, businesses,
             churches, schools and special events.
           </p>
         </div>
@@ -996,30 +898,39 @@ button:hover,
             <div class="service-icon">🎨</div>
             <h3>Graphic Design</h3>
             <p>
-              Creative and professional designs for businesses,
-              events, advertisements, social media and personal projects.
+              Creative flyers, posters, invitations, adverts, social media
+              graphics and professional visual designs.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20graphic%20design%20services." target="_blank" rel="noopener noreferrer">Request a Design ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20graphic%20design%20services.">
+              Request a Design ↗
+            </a>
           </article>
 
           <article class="service-card">
             <div class="service-icon">⌨️</div>
             <h3>Typing Services</h3>
             <p>
-              Typing of letters, assignments, reports, CVs, proposals,
-              projects and other business or school documents.
+              Typing and formatting of letters, assignments, reports,
+              CVs, proposals, projects and other documents.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20typing%20services." target="_blank" rel="noopener noreferrer">Request Typing ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20typing%20services.">
+              Request Typing ↗
+            </a>
           </article>
 
           <article class="service-card">
             <div class="service-icon">🖨️</div>
             <h3>General Printing</h3>
             <p>
-              Quality colour and black-and-white printing for documents,
-              business materials, school work and promotional items.
+              Colour and black-and-white printing for documents,
+              schoolwork, business materials and promotional items.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20printing%20services." target="_blank" rel="noopener noreferrer">Request Printing ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20printing%20services.">
+              Request Printing ↗
+            </a>
           </article>
 
           <article class="service-card">
@@ -1029,117 +940,114 @@ button:hover,
               Custom-branded polo shirts and T-shirts for businesses,
               churches, schools, teams, celebrations and events.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%203D%20polo%20or%20T-shirt%20printing." target="_blank" rel="noopener noreferrer">Order Custom Wear ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20custom%20polo%20or%20T-shirt%20printing.">
+              Order Custom Wear ↗
+            </a>
           </article>
 
           <article class="service-card">
             <div class="service-icon">🪧</div>
             <h3>Flex Printing & Banners</h3>
             <p>
-              Promotional banners, event backdrops, business signage
-              and advertising materials designed to attract attention.
+              Promotional banners, flex signs, event backdrops,
+              business signage and advertising materials.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20flex%20printing%20or%20a%20banner." target="_blank" rel="noopener noreferrer">Order a Banner ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20flex%20printing%20or%20a%20banner.">
+              Order a Banner ↗
+            </a>
           </article>
 
           <article class="service-card">
             <div class="service-icon">💳</div>
             <h3>Complimentary Cards</h3>
             <p>
-              Stylish complimentary cards for hotels, restaurants,
-              businesses, organisations and professional services.
+              Professional complimentary cards for hotels, restaurants,
+              businesses, organisations and hospitality services.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20complimentary%20cards." target="_blank" rel="noopener noreferrer">Order Cards ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20complimentary%20cards.">
+              Order Cards ↗
+            </a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">📇</div>
+            <div class="service-icon">🪪</div>
             <h3>Business Cards</h3>
             <p>
-              Memorable business card designs and printing to help
-              you promote your brand and connect with customers.
+              Stylish business cards that showcase your name,
+              brand identity, contact details and profession.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20business%20cards." target="_blank" rel="noopener noreferrer">Order Business Cards ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">📰</div>
-            <h3>Flyers & Posters</h3>
-            <p>
-              Attractive promotional designs for church programmes,
-              birthdays, weddings, product launches and advertisements.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20flyer%20or%20poster%20design." target="_blank" rel="noopener noreferrer">Order a Flyer ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">💌</div>
-            <h3>Invitation Cards</h3>
-            <p>
-              Beautiful invitation cards for weddings, birthdays,
-              anniversaries, ceremonies and special occasions.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20invitation%20cards." target="_blank" rel="noopener noreferrer">Order Invitations ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">📄</div>
-            <h3>Photocopying & Scanning</h3>
-            <p>
-              Convenient document photocopying and scanning for
-              students, professionals, offices and businesses.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20photocopying%20or%20scanning." target="_blank" rel="noopener noreferrer">Make an Enquiry ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">✨</div>
-            <h3>Lamination Services</h3>
-            <p>
-              Lamination for certificates, identification cards,
-              important documents and other printed materials.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20lamination%20services." target="_blank" rel="noopener noreferrer">Make an Enquiry ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">🏷️</div>
-            <h3>Branding & Product Labels</h3>
-            <p>
-              Logo design, product labels, stickers and promotional
-              materials to help your business build a consistent identity.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20branding%20or%20product%20labels." target="_blank" rel="noopener noreferrer">Build Your Brand ↗</a>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">📚</div>
-            <h3>Document Formatting</h3>
-            <p>
-              Professional formatting for CVs, reports, project work,
-              proposals and other documents.
-            </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20document%20formatting." target="_blank" rel="noopener noreferrer">Format My Document ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20business%20cards.">
+              Design My Card ↗
+            </a>
           </article>
 
           <article class="service-card">
             <div class="service-icon">📣</div>
-            <h3>Church & Event Designs</h3>
+            <h3>Flyers & Posters</h3>
             <p>
-              Event flyers, programme designs, church banners,
-              invitations and other promotional materials.
+              Eye-catching promotional designs for product launches,
+              church programmes, campaigns and special events.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20church%20or%20event%20designs." target="_blank" rel="noopener noreferrer">Plan Your Design ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20flyers%20or%20posters.">
+              Create My Flyer ↗
+            </a>
           </article>
 
           <article class="service-card">
-            <div class="service-icon">🛍️</div>
-            <h3>Custom Promotional Materials</h3>
+            <div class="service-icon">✍️</div>
+            <h3>Logo & Brand Identity</h3>
             <p>
-              Personalised print materials for promotions, gifts,
-              business campaigns and special occasions.
+              Memorable logos, colour schemes and brand materials
+              that help your business build a consistent identity.
             </p>
-            <a class="service-link" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20need%20custom%20promotional%20materials." target="_blank" rel="noopener noreferrer">Discuss Your Idea ↗</a>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20a%20logo%20or%20brand%20identity.">
+              Build My Brand ↗
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📚</div>
+            <h3>Photocopying & Scanning</h3>
+            <p>
+              Document photocopying, scanning and digital copies
+              for school, personal and business use.
+            </p>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20photocopying%20or%20scanning.">
+              Make an Enquiry ↗
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📖</div>
+            <h3>Binding & Lamination</h3>
+            <p>
+              Document finishing for reports, projects, certificates,
+              presentations and other important materials.
+            </p>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20binding%20or%20lamination.">
+              Request Finishing ↗
+            </a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Social Media Designs</h3>
+            <p>
+              Attractive promotional graphics for WhatsApp,
+              Facebook, Instagram and other digital platforms.
+            </p>
+            <a class="service-link"
+               href="https://wa.me/2348128848068?text=Hello%2C%20I%20need%20social%20media%20designs.">
+              Promote My Business ↗
+            </a>
           </article>
 
         </div>
@@ -1147,142 +1055,229 @@ button:hover,
     </section>
 
     <!-- PORTFOLIO -->
-    <section class="content-section portfolio-section" id="portfolio">
+    <section class="section portfolio-section" id="portfolio">
       <div class="container">
 
         <div class="section-heading">
           <span class="eyebrow">Creative Showcase</span>
-          <h2>Designs That Make an Impression</h2>
+          <h2>Designs That <span class="gradient-text">Stand Out</span></h2>
           <p>
-            Explore examples of the creative styles and project
-            categories EMMMY PRINT can help you create.
+            Explore examples of creative categories we can help you
+            develop for your business, events and personal projects.
           </p>
         </div>
 
         <div class="portfolio-grid">
 
           <article class="portfolio-card">
-            <div class="portfolio-art art-flyer">
-              <strong>MAKE<br>IT BOLD.</strong>
+            <div class="portfolio-art art-one">
+              YOUR BRAND<br>YOUR STYLE
             </div>
             <div class="portfolio-info">
-              <h3>Flyer & Poster Design</h3>
-              <p>Eye-catching designs for businesses, events and promotions.</p>
+              <h3>Flyers & Advertising</h3>
+              <p>Promotional artwork for products, services and events.</p>
             </div>
           </article>
 
           <article class="portfolio-card">
-            <div class="portfolio-art art-brand">
-              <strong>YOUR<br>BRAND.<br>YOUR STORY.</strong>
+            <div class="portfolio-art art-two">
+              BUILD<br>YOUR BRAND
             </div>
             <div class="portfolio-info">
-              <h3>Brand Identity</h3>
-              <p>Logos and visual identity concepts for businesses.</p>
+              <h3>Logo & Brand Identity</h3>
+              <p>Visual identities for growing businesses.</p>
             </div>
           </article>
 
           <article class="portfolio-card">
-            <div class="portfolio-art art-print">
-              <strong>PRINT<br>YOUR<br>VISION.</strong>
+            <div class="portfolio-art art-three">
+              MAKE IT<br>MEMORABLE
             </div>
             <div class="portfolio-info">
-              <h3>Printing & Promotional Materials</h3>
-              <p>Creative print concepts for cards, banners and promotions.</p>
+              <h3>Business Cards</h3>
+              <p>Professional designs for making great first impressions.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-four">
+              CREATE<br>WITH STYLE
+            </div>
+            <div class="portfolio-info">
+              <h3>Social Media Graphics</h3>
+              <p>Digital designs for online promotion.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-five">
+              WEAR YOUR<br>IDENTITY
+            </div>
+            <div class="portfolio-info">
+              <h3>Custom Apparel</h3>
+              <p>Branded clothing concepts for groups and businesses.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="portfolio-art art-six">
+              BIG IDEAS<br>BIG IMPACT
+            </div>
+            <div class="portfolio-info">
+              <h3>Banners & Flex</h3>
+              <p>Large-format promotional and event design concepts.</p>
             </div>
           </article>
 
         </div>
 
         <p class="portfolio-note">
-          These are illustrative design previews, not photographs
-          of completed customer projects. Add your own work as your
-          portfolio grows.
+          These are illustrative design previews, not photographs of completed client projects.
         </p>
 
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="content-section about-section" id="about">
+    <section class="section" id="about">
       <div class="container about-grid">
 
-        <div class="about-visual">
-          <div class="big-text">
-            YOUR<br>
-            IDEAS.<br>
-            OUR ART.
+        <div class="about-art">
+          <div>
+            <span>CREATIVITY MEETS QUALITY</span>
+            <strong>EMMMY<br><span class="gradient-text">PRINT.</span></strong>
+            <p style="margin-top:18px;color:#b8bfd9;font-size:13px">
+              Design it. Print it. Make it memorable.
+            </p>
           </div>
-          <p>CREATIVITY WITH PURPOSE — EMMMY PRINT</p>
         </div>
 
         <div class="about-copy">
-          <span class="eyebrow">About Our Studio</span>
-
-          <h2>Creativity, Quality & Professional Service</h2>
+          <span class="eyebrow">About Us</span>
+          <h2>Good Design Makes a <span class="gradient-text">Difference.</span></h2>
 
           <p>
-            EMMMY PRINT is a creative design and printing business
-            focused on helping individuals, businesses, organisations
-            and event planners present their ideas professionally.
+            EMMMY PRINT is a creative design and printing studio
+            focused on helping individuals, businesses, churches and
+            organisations present their ideas professionally.
           </p>
 
           <p>
-            From graphic design and branded materials to typing
-            and document services, we aim to make every project
-            clear, attractive and suited to the customer's needs.
+            From a simple document to a complete branding project,
+            our goal is to understand what you need and help you
+            communicate your message clearly and creatively.
           </p>
 
-          <ul class="about-list">
-            <li><span>✓</span> Creative and thoughtful designs</li>
-            <li><span>✓</span> A wide range of design and print services</li>
-            <li><span>✓</span> Friendly customer communication</li>
-            <li><span>✓</span> Solutions for personal and business projects</li>
+          <ul class="check-list">
+            <li>Creative and professional design concepts</li>
+            <li>Printing and branding solutions</li>
+            <li>Document typing and finishing services</li>
+            <li>Custom promotional materials</li>
+            <li>Direct communication for enquiries and orders</li>
           </ul>
 
           <a class="btn btn-primary"
-             href="https://wa.me/2348128848068"
-             target="_blank"
-             rel="noopener noreferrer">
-            Work With Us ↗
+             href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20would%20like%20to%20discuss%20a%20project.">
+            Let's Work Together ↗
           </a>
         </div>
 
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
+    <!-- HOW TO ORDER -->
+    <section class="section">
       <div class="container">
 
-        <span class="eyebrow">Let's Create Something Great</span>
-
-        <h2>Have a Design or Printing Project?</h2>
-
-        <p>
-          Tell us what you have in mind. Contact EMMMY PRINT
-          to discuss your graphic design, typing, printing,
-          branding or promotional material needs.
-        </p>
-
-        <div class="contact-buttons">
-
-          <a class="btn whatsapp-btn"
-             href="https://wa.me/2348128848068"
-             target="_blank"
-             rel="noopener noreferrer">
-            Chat With Us on WhatsApp ↗
-          </a>
-
-          <a class="btn btn-outline" href="#services">
-            Explore Our Services
-          </a>
-
+        <div class="section-heading">
+          <span class="eyebrow">Simple Process</span>
+          <h2>How to <span class="gradient-text">Get Started</span></h2>
+          <p>Getting your next design or printing project started is easy.</p>
         </div>
 
-        <div class="contact-number">
-          WhatsApp: +234 812 884 8068
-        </div>
+        <div class="process-grid">
 
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Tell Us What You Need</h3>
+            <p>
+              Choose a service and send us your requirements
+              through WhatsApp.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Discuss Your Project</h3>
+            <p>
+              Share your text, design ideas, sizes, quantities
+              and other project details.
+            </p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Confirm Your Order</h3>
+            <p>
+              Agree on the price, delivery arrangements and
+              project details directly with us.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+
+          <div>
+            <span class="eyebrow">Let's Create Something Great</span>
+            <h2>Have a Project in <span class="gradient-text">Mind?</span></h2>
+
+            <p>
+              Need a design, printing, branded T-shirts, banners
+              or typing services? Contact EMMMY PRINT to discuss
+              your requirements and request a quotation.
+            </p>
+
+            <a class="btn btn-primary"
+               href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20would%20like%20a%20quotation.">
+              💬 Send Us a WhatsApp Message
+            </a>
+          </div>
+
+          <div class="contact-details">
+
+            <div class="contact-item">
+              <div class="icon">💬</div>
+              <div>
+                <strong>WhatsApp</strong>
+                <span>+234 812 884 8068</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">🎨</div>
+              <div>
+                <strong>Graphic Design & Branding</strong>
+                <span>Logos, flyers, cards and promotional materials</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="icon">🖨️</div>
+              <div>
+                <strong>Printing & Document Services</strong>
+                <span>Printing, typing, banners and custom apparel</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1292,26 +1287,28 @@ button:hover,
   <footer>
     <div class="container footer-inner">
 
-      <div>
-        <div class="footer-logo">EMMMY <span>PRINT.</span></div>
-        <p>Creative Design. Quality Printing. Professional Service.</p>
-      </div>
+      <a class="logo" href="#home">EMMMY <span>PRINT.</span></a>
+
+      <p>© <span id="year"></span> EMMMY PRINT. All rights reserved.</p>
 
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
 
-      <p>
-        &copy; <span id="year">2026</span> EMMMY PRINT.
-        All rights reserved.
-      </p>
-
     </div>
   </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a class="whatsapp-float"
+     href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20am%20interested%20in%20your%20services."
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with EMMMY PRINT on WhatsApp">
+    ☎
+  </a>
 
   <script>
     document.getElementById("year").textContent =

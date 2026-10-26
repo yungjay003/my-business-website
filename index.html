@@ -1390,7 +1390,68 @@ section#services.section {
     </section>
 
   </main>
+```html
+<!-- EMMMY PRINT CUSTOMER ACCOUNTS -->
+<section class="section" id="customer-account">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Customer Portal</span>
+      <h2>Your <span class="gradient-text">EMMMY PRINT Account</span></h2>
+      <p>Create an account to get started, or log in if you already have one.</p>
+    </div>
 
+    <div class="service-card" style="max-width:520px;margin:auto">
+      <div id="account-forms">
+        <label for="account-email">Email address</label>
+        <input id="account-email" type="email" autocomplete="email"
+          placeholder="Enter your email" required
+          style="display:block;width:100%;padding:13px;margin:8px 0 18px;border-radius:8px">
+
+        <label for="account-password">Password</label>
+        <input id="account-password" type="password"
+          autocomplete="new-password" placeholder="At least 6 characters"
+          required minlength="6"
+          style="display:block;width:100%;padding:13px;margin:8px 0 18px;border-radius:8px">
+
+        <button class="btn btn-primary" id="account-signup" type="button">
+          Create Account
+        </button>
+        <button class="btn btn-outline" id="account-login" type="button">
+          Log In
+        </button>
+      </div>
+
+      <div id="account-logged-in" hidden>
+        <p>You are logged in as:</p>
+        <p id="account-user-email" style="overflow-wrap:anywhere;margin:12px 0"></p>
+        <button class="btn btn-outline" id="account-logout" type="button">
+          Log Out
+        </button>
+      </div>
+
+      <p id="account-message" role="status" aria-live="polite"
+        style="margin-top:18px;overflow-wrap:anywhere"></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  #customer-account label {
+    display:block;
+    font-size:13px;
+    color:#f8f9ff;
+  }
+  #customer-account input {
+    background:#f8f9ff;
+    color:#151a32;
+    border:1px solid #a9b0cc;
+  }
+  #customer-account button {
+    margin:4px 6px 4px 0;
+  }
+</style>
+<!-- END CUSTOMER ACCOUNTS -->
+```
   <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
@@ -1723,5 +1784,122 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+```html
+<!-- FIREBASE CUSTOMER AUTHENTICATION -->
+<script type="module">
+  import { initializeApp } from
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+  import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
+  } from
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDFSLIvUWVWJcM50XnTnHyKaOso-sq9s6E",
+    authDomain: "emmy-print-11ca6.firebaseapp.com",
+    projectId: "emmy-print-11ca6",
+    storageBucket: "emmy-print-11ca6.firebasestorage.app",
+    messagingSenderId: "36805186092",
+    appId: "1:36805186092:web:566e8033fe66537dd37789"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const emailInput = document.getElementById("account-email");
+  const passwordInput = document.getElementById("account-password");
+  const message = document.getElementById("account-message");
+  const forms = document.getElementById("account-forms");
+  const loggedIn = document.getElementById("account-logged-in");
+  const userEmail = document.getElementById("account-user-email");
+
+  function showMessage(text) {
+    message.textContent = text;
+  }
+
+  function friendlyError(error) {
+    const messages = {
+      "auth/email-already-in-use":
+        "This email already has an account. Please log in.",
+      "auth/invalid-email":
+        "Please enter a valid email address.",
+      "auth/weak-password":
+        "Please choose a password of at least 6 characters.",
+      "auth/invalid-credential":
+        "Email or password is incorrect. Please check and try again.",
+      "auth/too-many-requests":
+        "Too many attempts. Please wait before trying again.",
+      "auth/network-request-failed":
+        "Network error. Check your internet connection."
+    };
+
+    return messages[error.code] ||
+      "We couldn't complete that request. Please check your details and try again.";
+  }
+
+  document.getElementById("account-signup").addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    if (!email || !password) {
+      showMessage("Please enter your email and password.");
+      return;
+    }
+
+    try {
+      showMessage("Creating your account...");
+      await createUserWithEmailAndPassword(auth, email, password);
+      passwordInput.value = "";
+      showMessage("Your account has been created successfully!");
+    } catch (error) {
+      showMessage(friendlyError(error));
+    }
+  });
+
+  document.getElementById("account-login").addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
+    if (!email || !password) {
+      showMessage("Please enter your email and password.");
+      return;
+    }
+
+    try {
+      showMessage("Logging you in...");
+      await signInWithEmailAndPassword(auth, email, password);
+      passwordInput.value = "";
+      showMessage("You are now logged in!");
+    } catch (error) {
+      showMessage(friendlyError(error));
+    }
+  });
+
+  document.getElementById("account-logout").addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      showMessage("You have logged out successfully.");
+    } catch (error) {
+      showMessage("Logout failed. Please try again.");
+    }
+  });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      forms.hidden = true;
+      loggedIn.hidden = false;
+      userEmail.textContent = user.email || "Signed-in customer";
+    } else {
+      forms.hidden = false;
+      loggedIn.hidden = true;
+      userEmail.textContent = "";
+    }
+  });
+</script>
 </body>
 </html>

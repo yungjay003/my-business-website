@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Business | Quality Services</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #243247;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #102c46;
+      color: white;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+    }
+
+    .hero {
+      background: #eaf2f8;
+      padding: 75px 8%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #e7b957;
+      color: #102c46;
+      padding: 12px 22px;
+      margin-top: 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 45px 8%;
+      text-align: center;
+    }
+
+    .services {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .service {
+      background: #f5f7fa;
+      padding: 22px;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    #contact {
+      background: #eaf2f8;
+    }
+
+    footer {
+      background: #102c46;
+      color: blue;
+      padding: 18px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 10px 0 0;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h2>EMMMY PRINT </h2>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <h1>Welcome to My Business</h1>
+      <p>Quality products and reliable services you can trust.</p>
+      <a class="button" href="#contact">Contact Us</a>
+    </div>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Quality Products</h3>
+          <p>We provide products selected with care.</p>
+        </div>
+
+        <div class="service">
+          <h3>Professional Service</h3>
+          <p>We work hard to meet our customers' needs.</p>
+        </div>
+
+        <div class="service">
+          <h3>Customer Support</h3>
+          <p>We are here to help and answer your questions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Our Business</h2>
+      <p>
+        We are committed to quality, honesty and
+        excellent customer service. Our goal is to
+        provide value to every customer.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Ready to work with us? Send us a message.</p>
+      <a class="button"
+         href="https://wa.me/2349074239739">
+        Chat on WhatsApp
+      </a>
+      <p>Replace the example WhatsApp number with yours.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 EMMY PRINT . All rights reserved.</p>
+  </footer>
+</body>
+</html>

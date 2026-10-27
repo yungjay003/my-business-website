@@ -1,11 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090b18">
-<meta name="description" content="EMMY PRINT graphic design, printing and branding services.">
-<title>EMMY PRINT | Graphic Design & Printing</title>
+<meta name="description" content="EMMMY PRINT offers typing, graphic design, printing, branding, business cards, invitation cards, T-shirt printing and more.">
+<title>EMMMY PRINT | Graphic Design & Printing</title>
 
 <style>
 :root {
@@ -48,6 +49,8 @@ h1 span {color:var(--green)}
 .services-section,.portfolio-section,.order-section,.qr-section {background:linear-gradient(135deg,#0b1020,#17152e,#291548)}
 .services-grid,.portfolio-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .service-card,.portfolio-card,.qr-card,.order-card {background:linear-gradient(135deg,#191d35,#252044);border:1px solid var(--border);border-radius:14px;padding:25px}
+.service-card {height:100%;transition:transform .2s,border-color .2s}
+.service-card:hover {transform:translateY(-4px);border-color:var(--green)}
 .service-icon {font-size:30px;margin-bottom:12px}
 .service-card h3,.portfolio-info h3 {margin-bottom:8px;color:#fff}
 .about-grid {display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
@@ -107,6 +110,7 @@ footer {background:#070812;text-align:center;padding:25px 10%;font-size:14px;col
 .account-message {margin-top:12px;min-height:22px;color:#ffb8b8;font-size:13px;overflow-wrap:anywhere}
 .account-user-email {overflow-wrap:anywhere;font-weight:bold;margin:8px 0}
 .account-footnote {margin-top:22px;text-align:center;font-size:12px}
+button:disabled {opacity:.65;cursor:not-allowed}
 @media(max-width:900px) {
   .services-grid,.portfolio-grid,.qr-layout {grid-template-columns:1fr 1fr}
   .qr-copy {grid-column:1/-1;text-align:center}
@@ -192,6 +196,7 @@ footer {background:#070812;text-align:center;padding:25px 10%;font-size:14px;col
   </div>
 </section>
 
+<!-- ALL 11 SERVICES -->
 <section class="services-section" id="services">
   <div class="container">
     <div class="section-heading">
@@ -199,21 +204,72 @@ footer {background:#070812;text-align:center;padding:25px 10%;font-size:14px;col
       <h2>Our Services</h2>
       <p>Creative solutions to help your business stand out.</p>
     </div>
+
     <div class="services-grid">
       <article class="service-card">
-        <div class="service-icon">✏️</div>
-        <h3>Graphic Design</h3>
-        <p>Flyers, posters, business cards, invitations and other creative designs.</p>
+        <div class="service-icon">⌨️</div>
+        <h3>Typing Services</h3>
+        <p>Professional typing of letters, reports, assignments, proposals and other documents.</p>
       </article>
+
       <article class="service-card">
         <div class="service-icon">🖨️</div>
-        <h3>Printing Services</h3>
-        <p>Professional printing for business materials, promotions and special occasions.</p>
+        <h3>General Printing & Photocopying</h3>
+        <p>Quality document printing, photocopying and reproduction of important documents.</p>
       </article>
+
+      <article class="service-card">
+        <div class="service-icon">👕</div>
+        <h3>3D Polo & T-Shirt Printing</h3>
+        <p>Custom polo and T-shirt printing for businesses, events, groups and personal use.</p>
+      </article>
+
       <article class="service-card">
         <div class="service-icon">🎨</div>
-        <h3>Branding & Promotion</h3>
-        <p>Visual materials that help businesses promote their identity and products.</p>
+        <h3>Flex Printing</h3>
+        <p>Flex banners and large-format prints for advertising, promotions and events.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">💌</div>
+        <h3>Complimentary Cards</h3>
+        <p>Beautifully designed cards for greetings, appreciation and special occasions.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">💳</div>
+        <h3>Business Cards</h3>
+        <p>Professional business cards that present your contact details and brand identity.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">📣</div>
+        <h3>Flyers & Posters</h3>
+        <p>Eye-catching flyers and posters for business advertising, church programmes and events.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">💍</div>
+        <h3>Invitation Cards</h3>
+        <p>Custom invitation cards for weddings, birthdays, ceremonies and other celebrations.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">📄</div>
+        <h3>Lamination</h3>
+        <p>Protect certificates, identification cards, documents and other printed materials.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">🖌️</div>
+        <h3>Graphic Design & Branding</h3>
+        <p>Creative graphic designs, logos and branding materials for individuals and businesses.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">📝</div>
+        <h3>Document Preparation</h3>
+        <p>Document formatting and preparation for reports, letters, proposals and business documents.</p>
       </article>
     </div>
   </div>
@@ -287,13 +343,17 @@ footer {background:#070812;text-align:center;padding:25px 10%;font-size:14px;col
           <label for="order-service">Service Required *</label>
           <select id="order-service" name="service" required>
             <option value="">Select a service</option>
-            <option>Graphic Design</option>
-            <option>Flyer Design</option>
-            <option>Poster Design</option>
-            <option>Business Card Design</option>
-            <option>Printing Services</option>
-            <option>Branding</option>
-            <option>Invitation Card</option>
+            <option>Typing Services</option>
+            <option>General Printing / Photocopying</option>
+            <option>3D Polo & T-Shirt Printing</option>
+            <option>Flex Printing</option>
+            <option>Complimentary Cards</option>
+            <option>Business Cards</option>
+            <option>Flyers & Posters</option>
+            <option>Invitation Cards</option>
+            <option>Lamination</option>
+            <option>Graphic Design & Branding</option>
+            <option>Document Preparation</option>
             <option>Logo Design</option>
             <option>Other</option>
           </select>

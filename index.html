@@ -6,6 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090b18">
 <meta name="description" content="EMMMY PRINT - Professional typing, graphic design, printing and branding services.">
+<link rel="manifest" href="./manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="EMMMY PRINT">
 <title>EMMMY PRINT | Printing & Branding</title>
 
 <style>
@@ -721,6 +725,18 @@ onAuthStateChanged(auth,user => {
     userEmail.textContent = '';
   }
 });
+</script>
+
+<!-- PWA SERVICE WORKER REGISTRATION -->
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js", { scope: "./" })
+      .catch(error => {
+        console.error("PWA service worker registration failed:", error);
+      });
+  });
+}
 </script>
 
 </body>

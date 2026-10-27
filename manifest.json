@@ -1,0 +1,26 @@
+
+{
+  "id": "/my-business-website/",
+  "name": "EMMMY PRINT",
+  "short_name": "EMMMY PRINT",
+  "description": "EMMMY PRINT printing services and online ordering",
+  "start_url": "/my-business-website/",
+  "scope": "/my-business-website/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "/my-business-website/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/my-business-website/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="EMMY PRINT offers graphic design, printing and branding services.">
+<meta name="description" content="EMMMY PRINT offers graphic design, printing and branding services.">
 <meta name="theme-color" content="#090b18">
-<title>EMMY PRINT | Graphic Design & Printing</title>
+<title>EMMMY PRINT | Graphic Design & Printing</title>
 
 <style>
 :root {
@@ -21,9 +21,7 @@
 html {scroll-behavior:smooth;scroll-padding-top:90px}
 body {
   font-family:Arial,Helvetica,sans-serif;
-  line-height:1.7;
-  background:#090b18;
-  color:#f7f8ff;
+  line-height:1.7;background:#090b18;color:#f7f8ff;
 }
 a {text-decoration:none}
 button,input {font:inherit}
@@ -32,32 +30,21 @@ button {cursor:pointer}
 [hidden] {display:none!important}
 
 header {
-  background:#090b18;
-  position:sticky;
-  top:0;
-  z-index:100;
+  background:#090b18;position:sticky;top:0;z-index:100;
   border-bottom:1px solid #30294a;
 }
 .navbar {
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
 }
 .logo {color:#fff;font-size:25px;font-weight:800;letter-spacing:1px}
 .logo span,.account-brand span {color:var(--green)}
 nav {display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 nav a {color:#fff;font-size:14px;font-weight:600}
 nav a:hover {color:#a78bfa}
-
 .button {
-  display:inline-block;
-  padding:12px 22px;
-  border-radius:7px;
-  font-weight:700;
-  cursor:pointer;
-  border:0;
+  display:inline-block;padding:12px 22px;border-radius:7px;
+  font-weight:700;cursor:pointer;border:0;
 }
 .button-primary {background:var(--green);color:#102c20}
 .button-outline {border:2px solid #fff;color:#fff}
@@ -65,19 +52,13 @@ nav a:hover {color:#a78bfa}
 
 .hero {
   padding:105px 0;
-  background:
-    radial-gradient(circle at 90% 20%,#44216b,transparent 35%),
-    linear-gradient(135deg,#090b18,#17152e,#291548);
+  background:radial-gradient(circle at 90% 20%,#44216b,transparent 35%),
+  linear-gradient(135deg,#090b18,#17152e,#291548);
 }
 .hero-content {max-width:760px}
 .eyebrow {
-  display:inline-block;
-  color:#a78bfa;
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:15px;
+  display:inline-block;color:#a78bfa;font-size:13px;font-weight:800;
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:15px;
 }
 .hero h1 {font-size:clamp(36px,5vw,58px);line-height:1.15;margin-bottom:22px}
 .hero h1 span {color:#a78bfa}
@@ -86,197 +67,99 @@ nav a:hover {color:#a78bfa}
 
 section {padding:80px 0}
 .section-heading {text-align:center;max-width:700px;margin:0 auto 42px}
-.section-heading h2 {font-size:clamp(27px,4vw,38px);line-height:1.3;margin-bottom:12px;color:#fff}
+.section-heading h2 {font-size:clamp(27px,4vw,38px);line-height:1.3;margin-bottom:12px}
 .section-heading p {color:var(--muted)}
 .services-section,.portfolio-section,.qr-section {
   background:linear-gradient(135deg,#0b1020,#17152e,#291548);
 }
-
 .services-grid,.portfolio-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;
 }
 .service-card,.portfolio-card,.about-panel,.qr-card {
   background:linear-gradient(135deg,#191d35,#252044);
-  border:1px solid #454064;
-  border-radius:13px;
-  overflow:hidden;
+  border:1px solid #454064;border-radius:13px;overflow:hidden;
 }
-.service-card {padding:28px}
+.service-card {padding:28px;transition:transform .2s}
 .service-icon {
-  width:54px;height:54px;border-radius:12px;
-  display:flex;align-items:center;justify-content:center;
-  background:#30234d;color:#c4b5fd;font-size:26px;margin-bottom:17px;
+  width:54px;height:54px;border-radius:12px;display:flex;
+  align-items:center;justify-content:center;background:#30234d;
+  color:#c4b5fd;font-size:26px;margin-bottom:17px;
 }
 .service-card h3,.portfolio-info h3 {color:#fff;margin-bottom:10px}
 .service-card p,.portfolio-info p {color:var(--muted);font-size:15px}
 .service-card:hover,.portfolio-card:hover {transform:translateY(-4px)}
-.service-card,.portfolio-card {transition:transform .2s}
-
-.about-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  align-items:center;
+.portfolio-card {background:#fff;color:#17152e;transition:transform .2s}
+.portfolio-visual {
+  min-height:340px;padding:18px;display:flex;align-items:center;
+  justify-content:center;overflow:hidden;
 }
+.design-sheet {
+  width:100%;max-width:300px;min-height:295px;padding:23px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:0 10px 25px #0005;overflow:hidden;
+}
+.design-kicker {
+  font-size:10px;letter-spacing:2px;font-weight:900;text-transform:uppercase;
+}
+.design-sheet h3 {font-size:clamp(25px,3vw,37px);line-height:1.04;margin:12px 0}
+.design-sheet p {font-size:12px;line-height:1.5}
+.design-tag {
+  display:inline-block;width:max-content;max-width:100%;padding:6px 10px;
+  border-radius:3px;font-size:10px;font-weight:900;letter-spacing:1px;
+}
+.flyer-design {
+  background:linear-gradient(145deg,#160b36,#6424a8 62%,#f06c9b);
+  color:#fff;text-align:left;
+}
+.flyer-design .design-art {
+  align-self:flex-end;width:95px;height:95px;border:12px solid #ffffff50;
+  border-radius:50%;box-shadow:0 0 0 10px #ffffff20,0 0 0 20px #ffffff10;
+}
+.brand-design {background:#f8f1df;color:#172b3b;text-align:center;align-items:center}
+.brand-design .brand-symbol {
+  width:78px;height:78px;display:flex;align-items:center;justify-content:center;
+  border:3px solid #d18d36;border-radius:50%;font-size:34px;font-weight:900;margin:10px auto;
+}
+.brand-design h3 {font-size:30px;letter-spacing:2px}
+.brand-design .design-tag {background:#172b3b;color:#f8f1df}
+.card-design {background:#0e6b61;color:#fff;position:relative}
+.card-design:after {
+  content:"";position:absolute;width:180px;height:180px;
+  border:30px solid #ffffff18;border-radius:50%;right:-90px;top:-60px;
+}
+.card-design .card-logo {font-size:24px;font-weight:900;letter-spacing:2px}
+.card-design .card-line {width:60px;height:4px;background:#f4c85c}
+.card-design .design-tag {background:#f4c85c;color:#172b3b}
+.portfolio-info {padding:22px;background:#191d35}
+.portfolio-note,.design-disclaimer {text-align:center;color:var(--muted);margin-top:24px;font-size:14px}
+.design-disclaimer {color:#aaa6c4;font-size:12px}
+
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .about-panel {padding:35px;border-left:5px solid #a78bfa}
 .about-panel h3 {font-size:26px;margin-bottom:14px}
 .about-panel p,.about-copy p {color:var(--muted);margin-bottom:16px}
 .about-copy h2 {font-size:34px;line-height:1.3;margin-bottom:18px}
 
-/* REALISTIC HTML DESIGN MOCKUPS */
-.portfolio-card {background:#fff;color:#17152e}
-.portfolio-visual {
-  min-height:340px;
-  padding:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-.design-sheet {
-  width:100%;
-  max-width:300px;
-  min-height:295px;
-  padding:23px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  box-shadow:0 10px 25px #0005;
-  overflow:hidden;
-}
-.design-kicker {
-  font-size:10px;
-  letter-spacing:2px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-.design-sheet h3 {
-  font-size:clamp(25px,3vw,37px);
-  line-height:1.04;
-  margin:12px 0;
-}
-.design-sheet p {font-size:12px;line-height:1.5}
-.design-tag {
-  display:inline-block;
-  width:max-content;
-  max-width:100%;
-  padding:6px 10px;
-  border-radius:3px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-.flyer-design {
-  background:linear-gradient(145deg,#160b36,#6424a8 62%,#f06c9b);
-  color:#fff;
-  text-align:left;
-}
-.flyer-design .design-art {
-  align-self:flex-end;
-  width:95px;height:95px;
-  border:12px solid #ffffff50;
-  border-radius:50%;
-  box-shadow:0 0 0 10px #ffffff20,0 0 0 20px #ffffff10;
-}
-.brand-design {
-  background:#f8f1df;
-  color:#172b3b;
-  text-align:center;
-  align-items:center;
-}
-.brand-design .brand-symbol {
-  width:78px;height:78px;
-  display:flex;align-items:center;justify-content:center;
-  border:3px solid #d18d36;
-  border-radius:50%;
-  font-size:34px;font-weight:900;
-  margin:10px auto;
-}
-.brand-design h3 {font-size:30px;letter-spacing:2px}
-.brand-design .design-tag {background:#172b3b;color:#f8f1df}
-.card-design {
-  background:#0e6b61;
-  color:#fff;
-  position:relative;
-}
-.card-design:after {
-  content:"";
-  position:absolute;
-  width:180px;height:180px;
-  border:30px solid #ffffff18;
-  border-radius:50%;
-  right:-90px;top:-60px;
-}
-.card-design .card-logo {
-  font-size:24px;font-weight:900;letter-spacing:2px;
-}
-.card-design .card-line {width:60px;height:4px;background:#f4c85c}
-.card-design .design-tag {background:#f4c85c;color:#172b3b}
-.portfolio-info {padding:22px;background:#191d35}
-.portfolio-info h3 {margin-bottom:10px}
-.portfolio-info p {color:var(--muted)}
-.portfolio-note {text-align:center;color:var(--muted);margin-top:24px;font-size:14px}
-.design-disclaimer {
-  margin-top:14px;
-  color:#aaa6c4;
-  font-size:12px;
-  text-align:center;
-}
-
-/* QR CODE AREA */
-.qr-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-}
+.qr-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .qr-card {padding:24px;text-align:center;overflow-wrap:anywhere}
 .qr-card h3 {color:#fff;margin-bottom:12px}
 .qr-card p {color:#d6d2e8;font-size:14px;margin-top:12px}
 .qr-image-box {
-  min-height:240px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#fff;
-  padding:10px;
-  border-radius:8px;
-  margin:0 auto 15px;
-  max-width:240px;
+  min-height:240px;display:flex;align-items:center;justify-content:center;
+  background:#fff;padding:10px;border-radius:8px;margin:0 auto 15px;max-width:240px;
 }
 #whatsapp-qr {
-  width:220px;
-  min-height:220px;
-  max-width:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+  width:220px;min-height:220px;max-width:100%;display:flex;
+  align-items:center;justify-content:center;overflow:hidden;
 }
-#whatsapp-qr img,#whatsapp-qr canvas {
-  max-width:100%;
-  height:auto;
-}
+#whatsapp-qr img,#whatsapp-qr canvas {max-width:100%;height:auto}
 .qr-card button {
-  padding:11px 15px;
-  margin:8px 3px 0;
-  border:0;
-  border-radius:7px;
-  background:var(--green);
-  color:#102c20;
-  font-weight:700;
+  padding:11px 15px;margin:8px 3px 0;border:0;border-radius:7px;
+  background:var(--green);color:#102c20;font-weight:700;
 }
 .qr-card input[type="file"] {width:100%;margin:15px 0;color:#fff}
 #qr-reader {width:100%;max-width:360px;margin:15px auto}
-#qr-file-reader {
-  position:absolute;
-  left:-10000px;
-  top:0;
-  width:300px;
-  height:300px;
-  overflow:hidden;
-}
+#qr-file-reader {position:absolute;left:-10000px;top:0;width:300px;height:300px;overflow:hidden}
 #qr-scan-result {margin-top:14px;overflow-wrap:anywhere;color:#fff}
 #qr-scan-result a {display:block;color:#c4b5fd;text-decoration:underline;margin-top:10px}
 .qr-status {font-size:13px}
@@ -286,32 +169,23 @@ section {padding:80px 0}
 .contact-details {color:#d6d2e8;margin:24px 0}
 .contact-details p {margin:5px}
 .whatsapp-button {
-  position:fixed;right:18px;bottom:18px;z-index:90;
-  padding:12px 17px;border-radius:30px;
-  background:var(--green);color:#102c20;font-weight:800;
+  position:fixed;right:18px;bottom:18px;z-index:90;padding:12px 17px;
+  border-radius:30px;background:var(--green);color:#102c20;font-weight:800;
   box-shadow:0 5px 18px #0005;
 }
 footer {background:#070812;text-align:center;padding:25px;color:#d6d2e8;font-size:14px}
 footer p+p {margin-top:5px}
 
-/* CUSTOMER LOGIN */
+/* CUSTOMER LOGIN AND PASSWORD RECOVERY */
 #customer-account {
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
   padding:30px 16px;
-  background:
-    radial-gradient(ellipse at 12% 8%,#44216b88,transparent 38%),
-    radial-gradient(ellipse at 90% 90%,#1769aa44,transparent 35%),
-    #090b18;
+  background:radial-gradient(ellipse at 12% 8%,#44216b88,transparent 38%),
+  radial-gradient(ellipse at 90% 90%,#1769aa44,transparent 35%),#090b18;
 }
 .account-card {
-  width:min(100%,460px);
-  padding:34px;
-  border:1px solid #514374;
-  border-radius:20px;
-  background:linear-gradient(135deg,#191d35,#252044);
+  width:min(100%,460px);padding:34px;border:1px solid #514374;
+  border-radius:20px;background:linear-gradient(135deg,#191d35,#252044);
   box-shadow:0 22px 70px #0007;
 }
 .account-brand {font-size:26px;font-weight:900;margin-bottom:22px}
@@ -320,16 +194,13 @@ footer p+p {margin-top:5px}
 .account-intro {color:#d6d2e8;font-size:14px;margin-bottom:22px}
 #account-forms label {display:block;margin:13px 0 6px;font-weight:700;font-size:14px}
 #account-forms input {
-  display:block;width:100%;padding:13px;
-  border:1px solid #514374;border-radius:8px;
-  color:#fff;background:#0d1021;outline:none;
+  display:block;width:100%;padding:13px;border:1px solid #514374;
+  border-radius:8px;color:#fff;background:#0d1021;outline:none;
 }
 #account-forms input:focus {border-color:#a78bfa}
 .account-button {
-  width:100%;margin-top:13px;padding:13px;
-  border:0;border-radius:8px;
-  background:var(--purple);color:#fff;
-  font-weight:800;cursor:pointer;
+  width:100%;margin-top:13px;padding:13px;border:0;border-radius:8px;
+  background:var(--purple);color:#fff;font-weight:800;cursor:pointer;
 }
 .account-button:disabled {opacity:.6;cursor:wait}
 .account-button-secondary {background:transparent;border:1px solid #716493}
@@ -337,7 +208,11 @@ footer p+p {margin-top:5px}
 .account-footnote {text-align:center;color:#aaa6c4;font-size:12px;margin-top:22px}
 .signed-in-label {color:#d6d2e8;font-size:14px}
 .account-user-email {font-weight:700;overflow-wrap:anywhere;margin:5px 0 12px}
-
+.forgot-link {
+  display:block;text-align:right;margin:10px 0 4px;background:none;border:0;
+  padding:4px 0;color:#c4b5fd;font-size:14px;font-weight:700;
+}
+.forgot-link:hover {color:#fff;text-decoration:underline}
 @media(max-width:850px) {
   .container {width:92%}
   .navbar {padding:15px 0;flex-direction:column}
@@ -380,6 +255,12 @@ footer p+p {margin-top:5px}
              placeholder="At least 6 characters" required>
 
       <button id="account-login" class="account-button" type="submit">Sign In</button>
+
+      <!-- NEW: FORGOT PASSWORD BUTTON -->
+      <button id="forgot-password" class="forgot-link" type="button">
+        Forgot Password?
+      </button>
+
       <button id="account-signup" class="account-button account-button-secondary" type="button">Create Account</button>
     </form>
 
@@ -418,11 +299,7 @@ footer p+p {margin-top:5px}
         <div class="hero-content">
           <span class="eyebrow">Creativity • Quality • Service</span>
           <h1>Bringing Your <span>Creative Ideas</span> to Life</h1>
-          <p>
-            Welcome to EMMMY PRINT. We help individuals and businesses
-            present their ideas professionally through creative design,
-            printing and branding services.
-          </p>
+          <p>Welcome to EMMMY PRINT. We help individuals and businesses present their ideas professionally through creative design, printing and branding services.</p>
           <div class="hero-buttons">
             <a class="button button-primary" href="#contact">Request a Service</a>
             <a class="button button-outline" href="#services">Explore Our Services</a>
@@ -439,179 +316,81 @@ footer p+p {margin-top:5px}
           <p>Creative solutions to help your business or special occasion stand out.</p>
         </div>
         <div class="services-grid">
-          <article class="service-card">
-            <div class="service-icon">🎨</div>
-            <h3>Graphic Design</h3>
-            <p>Professional flyers, posters, logos, banners, invitations and promotional designs.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">🖨️</div>
-            <h3>Printing Services</h3>
-            <p>Quality printing for business cards, documents, flyers, posters and other materials.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">🏷️</div>
-            <h3>Branding</h3>
-            <p>Help your business stand out with consistent visual identity and branded materials.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">📣</div>
-            <h3>Business Promotion</h3>
-            <p>Promotional materials designed to help you reach more customers.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">💌</div>
-            <h3>Event Materials</h3>
-            <p>Invitations, programmes, banners and designs for events and celebrations.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">💻</div>
-            <h3>Custom Design</h3>
-            <p>Have a special idea? Contact us to discuss a design that suits your needs.</p>
-          </article>
+          <article class="service-card"><div class="service-icon">🎨</div><h3>Graphic Design</h3><p>Professional flyers, posters, logos, banners, invitations and promotional designs.</p></article>
+          <article class="service-card"><div class="service-icon">🖨️</div><h3>Printing Services</h3><p>Quality printing for business cards, documents, flyers, posters and other materials.</p></article>
+          <article class="service-card"><div class="service-icon">🏷️</div><h3>Branding</h3><p>Help your business stand out with consistent visual identity and branded materials.</p></article>
+          <article class="service-card"><div class="service-icon">📣</div><h3>Business Promotion</h3><p>Promotional materials designed to help you reach more customers.</p></article>
+          <article class="service-card"><div class="service-icon">💌</div><h3>Event Materials</h3><p>Invitations, programmes, banners and designs for events and celebrations.</p></article>
+          <article class="service-card"><div class="service-icon">💻</div><h3>Custom Design</h3><p>Have a special idea? Contact us to discuss a design that suits your needs.</p></article>
         </div>
       </div>
     </section>
 
     <section id="about">
       <div class="container about-grid">
-        <div class="about-panel">
-          <h3>EMMMY PRINT</h3>
-          <p>
-            We help customers communicate their ideas through creative
-            design, printing and branding solutions. Our goal is to deliver
-            professional results and friendly service.
-          </p>
-        </div>
+        <div class="about-panel"><h3>EMMMY PRINT</h3><p>We help customers communicate their ideas through creative design, printing and branding solutions. Our goal is to deliver professional results and friendly service.</p></div>
         <div class="about-copy">
-          <span class="eyebrow">About Us</span>
-          <h2>We Make Your Ideas Stand Out</h2>
+          <span class="eyebrow">About Us</span><h2>We Make Your Ideas Stand Out</h2>
           <p>Good design helps people notice your business, event or message.</p>
-          <p>
-            Whether you need promotional materials, a business identity
-            or printing for a special occasion, we are ready to discuss your project.
-          </p>
+          <p>Whether you need promotional materials, a business identity or printing for a special occasion, we are ready to discuss your project.</p>
           <a class="button button-primary" href="#contact">Contact Us</a>
         </div>
       </div>
     </section>
 
-    <!-- PORTFOLIO WITH VISIBLE DESIGN MOCKUPS -->
     <section class="portfolio-section" id="portfolio">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Our Work</span>
-          <h2>Design & Printing Portfolio</h2>
-          <p>Explore sample designs created to demonstrate our design style.</p>
-        </div>
-
+        <div class="section-heading"><span class="eyebrow">Our Work</span><h2>Design & Printing Portfolio</h2><p>Explore sample designs created to demonstrate our design style.</p></div>
         <div class="portfolio-grid">
           <article class="portfolio-card">
-            <div class="portfolio-visual">
-              <div class="design-sheet flyer-design">
-                <div>
-                  <span class="design-kicker">Your brand deserves attention</span>
-                  <h3>MAKE<br>IT<br>HAPPEN.</h3>
-                  <p>Creative ideas. Bold impressions. Professional results.</p>
-                </div>
-                <div class="design-art" aria-hidden="true"></div>
-                <span class="design-tag">PROMO • DESIGN • PRINT</span>
-              </div>
-            </div>
-            <div class="portfolio-info">
-              <h3>Flyers & Promotional Posters</h3>
-              <p>Bold promotional concepts for products, services, events and business adverts.</p>
-            </div>
+            <div class="portfolio-visual"><div class="design-sheet flyer-design">
+              <div><span class="design-kicker">Your brand deserves attention</span><h3>MAKE<br>IT<br>HAPPEN.</h3><p>Creative ideas. Bold impressions. Professional results.</p></div>
+              <div class="design-art" aria-hidden="true"></div><span class="design-tag">PROMO • DESIGN • PRINT</span>
+            </div></div>
+            <div class="portfolio-info"><h3>Flyers & Promotional Posters</h3><p>Bold promotional concepts for products, services, events and business adverts.</p></div>
           </article>
-
           <article class="portfolio-card">
-            <div class="portfolio-visual">
-              <div class="design-sheet brand-design">
-                <div>
-                  <span class="design-kicker">A brand people remember</span>
-                  <div class="brand-symbol">E</div>
-                  <h3>YOUR<br>BRAND</h3>
-                  <p>Build trust with a clear and consistent visual identity.</p>
-                </div>
-                <span class="design-tag">BRAND IDENTITY</span>
-              </div>
-            </div>
-            <div class="portfolio-info">
-              <h3>Logo & Brand Identity</h3>
-              <p>Logo concepts, brand colours and visual identity ideas for businesses.</p>
-            </div>
+            <div class="portfolio-visual"><div class="design-sheet brand-design">
+              <div><span class="design-kicker">A brand people remember</span><div class="brand-symbol">E</div><h3>YOUR<br>BRAND</h3><p>Build trust with a clear and consistent visual identity.</p></div>
+              <span class="design-tag">BRAND IDENTITY</span>
+            </div></div>
+            <div class="portfolio-info"><h3>Logo & Brand Identity</h3><p>Logo concepts, brand colours and visual identity ideas for businesses.</p></div>
           </article>
-
           <article class="portfolio-card">
-            <div class="portfolio-visual">
-              <div class="design-sheet card-design">
-                <div>
-                  <span class="design-kicker">Professional printing</span>
-                  <div class="card-logo">EMMMY<br>PRINT</div>
-                  <div class="card-line"></div>
-                  <h3>YOUR<br>BUSINESS.<br>YOUR IMAGE.</h3>
-                  <p>Business cards and printed materials that leave a lasting impression.</p>
-                </div>
-                <span class="design-tag">PRINT WITH PURPOSE</span>
-              </div>
-            </div>
-            <div class="portfolio-info">
-              <h3>Business Cards & Print</h3>
-              <p>Sample business-card layouts and branded materials for professional use.</p>
-            </div>
+            <div class="portfolio-visual"><div class="design-sheet card-design">
+              <div><span class="design-kicker">Professional printing</span><div class="card-logo">EMMMY<br>PRINT</div><div class="card-line"></div><h3>YOUR<br>BUSINESS.<br>YOUR IMAGE.</h3><p>Business cards and printed materials that leave a lasting impression.</p></div>
+              <span class="design-tag">PRINT WITH PURPOSE</span>
+            </div></div>
+            <div class="portfolio-info"><h3>Business Cards & Print</h3><p>Sample business-card layouts and branded materials for professional use.</p></div>
           </article>
         </div>
-
-        <p class="design-disclaimer">
-          These are sample mockups. Your final designs can be customised to your specifications.
-        </p>
+        <p class="design-disclaimer">These are sample mockups. Your final designs can be customised to your specifications.</p>
         <p class="portfolio-note">Contact EMMMY PRINT to request your own design.</p>
       </div>
     </section>
 
-    <!-- QR CODE AND SCANNER -->
     <section class="qr-section" id="qr-tools">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Quick Access</span>
-          <h2>EMMMY PRINT QR Tools</h2>
-          <p>Open WhatsApp, scan a QR code with your camera, or scan a QR image.</p>
-        </div>
-
+        <div class="section-heading"><span class="eyebrow">Quick Access</span><h2>EMMMY PRINT QR Tools</h2><p>Open WhatsApp, scan a QR code with your camera, or scan a QR image.</p></div>
         <div class="qr-grid">
           <div class="qr-card">
             <h3>WhatsApp QR Code</h3>
-            <div class="qr-image-box">
-              <div id="whatsapp-qr" aria-label="WhatsApp QR code">
-                <p style="color:#222;font-size:13px">Generating QR code...</p>
-              </div>
-            </div>
-            <p id="qr-generation-status" class="qr-status">
-              QR code for +234 812 884 8068.
-            </p>
-            <a class="button button-primary"
-               href="https://wa.me/2348128848068"
-               target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+            <div class="qr-image-box"><div id="whatsapp-qr" aria-label="WhatsApp QR code"><p style="color:#222;font-size:13px">Generating QR code...</p></div></div>
+            <p id="qr-generation-status" class="qr-status">QR code for +234 812 884 8068.</p>
+            <a class="button button-primary" href="https://wa.me/2348128848068" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
             <button id="download-qr" type="button">Download QR Code</button>
           </div>
-
           <div class="qr-card">
-            <h3>Scan with Camera</h3>
-            <div id="qr-reader"></div>
+            <h3>Scan with Camera</h3><div id="qr-reader"></div>
             <button id="start-qr-scan" type="button">Start Camera Scanner</button>
             <button id="stop-qr-scan" type="button">Stop Scanner</button>
-            <p class="qr-status" id="camera-status">
-              Press Start Camera Scanner to begin.
-            </p>
+            <p class="qr-status" id="camera-status">Press Start Camera Scanner to begin.</p>
           </div>
-
           <div class="qr-card">
             <h3>Scan a QR Image</h3>
             <label for="qr-image-file">Choose an image containing a QR code:</label>
             <input id="qr-image-file" type="file" accept="image/*">
-            <p id="qr-scan-result" role="status" aria-live="polite">
-              Your scan result will appear here.
-            </p>
+            <p id="qr-scan-result" role="status" aria-live="polite">Your scan result will appear here.</p>
           </div>
         </div>
       </div>
@@ -619,33 +398,17 @@ footer p+p {margin-top:5px}
 
     <section class="contact-section" id="contact">
       <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Get In Touch</span>
-          <h2>Let's Work on Your Next Project</h2>
-          <p>Contact EMMMY PRINT for graphic design, printing and branding services.</p>
-        </div>
-        <div class="contact-details">
-          <p>WhatsApp: +234 812 884 8068</p>
-          <p>We look forward to working with you.</p>
-        </div>
-        <a class="button button-primary"
-           href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-           target="_blank" rel="noopener noreferrer">Chat with Us on WhatsApp</a>
+        <div class="section-heading"><span class="eyebrow">Get In Touch</span><h2>Let's Work on Your Next Project</h2><p>Contact EMMMY PRINT for graphic design, printing and branding services.</p></div>
+        <div class="contact-details"><p>WhatsApp: +234 812 884 8068</p><p>We look forward to working with you.</p></div>
+        <a class="button button-primary" href="https://wa.me/2348128848068?text=Hello%20EMMMY%20PRINT%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer">Chat with Us on WhatsApp</a>
       </div>
     </section>
   </main>
 
-  <a class="whatsapp-button"
-     href="https://wa.me/2348128848068"
-     target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
-
-  <footer>
-    <p>&copy; 2026 EMMMY PRINT. All rights reserved.</p>
-    <p>Creative Design. Quality Service. Professional Results.</p>
-  </footer>
+  <a class="whatsapp-button" href="https://wa.me/2348128848068" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+  <footer><p>&copy; 2026 EMMMY PRINT. All rights reserved.</p><p>Creative Design. Quality Service. Professional Results.</p></footer>
 </div>
 
-<!-- QR LIBRARIES -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://unpkg.com/html5-qrcode"></script>
 
@@ -660,26 +423,17 @@ footer p+p {margin-top:5px}
 
   function generateWhatsAppQR() {
     if (typeof QRCode === "undefined") {
-      qrStatus.textContent =
-        "QR library did not load. Check your internet connection and refresh the page.";
-      qrContainer.innerHTML =
-        '<p style="color:#222;font-size:13px">QR library unavailable.</p>';
+      qrStatus.textContent = "QR library did not load. Check your internet connection and refresh.";
+      qrContainer.innerHTML = '<p style="color:#222;font-size:13px">QR library unavailable.</p>';
       return;
     }
-
     qrContainer.innerHTML = "";
-
     new QRCode(qrContainer, {
-      text: whatsappURL,
-      width: 220,
-      height: 220,
-      colorDark: "#000000",
-      colorLight: "#ffffff",
-      correctLevel: QRCode.CorrectLevel.H
+      text: whatsappURL, width:220, height:220,
+      colorDark:"#000000", colorLight:"#ffffff",
+      correctLevel:QRCode.CorrectLevel.H
     });
-
-    qrStatus.textContent =
-      "Scan this QR code to open EMMMY PRINT on WhatsApp.";
+    qrStatus.textContent = "Scan this QR code to open EMMMY PRINT on WhatsApp.";
   }
 
   generateWhatsAppQR();
@@ -688,18 +442,13 @@ footer p+p {margin-top:5px}
     const canvas = qrContainer.querySelector("canvas");
     const image = qrContainer.querySelector("img");
     let imageURL = "";
-
-    if (canvas) {
-      imageURL = canvas.toDataURL("image/png");
-    } else if (image && image.src) {
-      imageURL = image.src;
-    }
+    if (canvas) imageURL = canvas.toDataURL("image/png");
+    else if (image && image.src) imageURL = image.src;
 
     if (!imageURL) {
       qrStatus.textContent = "QR code is not ready to download. Refresh and try again.";
       return;
     }
-
     const link = document.createElement("a");
     link.href = imageURL;
     link.download = "emmm y-print-whatsapp-qr.png".replace(" ", "");
@@ -713,18 +462,15 @@ footer p+p {margin-top:5px}
   const cameraStatus = document.getElementById("camera-status");
   const resultBox = document.getElementById("qr-scan-result");
   const imageInput = document.getElementById("qr-image-file");
-
   let qrScanner = null;
   let scannerRunning = false;
   let scanInProgress = false;
 
   function showQRResult(text) {
     resultBox.replaceChildren();
-
     const result = document.createElement("p");
     result.textContent = "QR result: " + text;
     resultBox.appendChild(result);
-
     if (/^https?:\/\//i.test(text)) {
       const link = document.createElement("a");
       link.href = text;
@@ -740,47 +486,34 @@ footer p+p {margin-top:5px}
       cameraStatus.textContent = "The camera scanner is already running.";
       return;
     }
-
     if (typeof Html5Qrcode === "undefined") {
-      cameraStatus.textContent =
-        "Scanner library failed to load. Check your internet connection.";
+      cameraStatus.textContent = "Scanner library failed to load. Check your internet connection.";
       return;
     }
-
     try {
       qrScanner = new Html5Qrcode("qr-reader");
       cameraStatus.textContent = "Requesting camera access...";
-
       await qrScanner.start(
-        { facingMode: "environment" },
-        { fps: 10, qrbox: { width: 220, height: 220 } },
+        {facingMode:"environment"},
+        {fps:10, qrbox:{width:220,height:220}},
         async (decodedText) => {
           if (scanInProgress) return;
           scanInProgress = true;
-
           showQRResult(decodedText);
           cameraStatus.textContent = "QR code scanned.";
-
           try {
-            if (qrScanner && scannerRunning) {
-              await qrScanner.stop();
-            }
-          } catch (error) {
-            // Keep the decoded result visible.
-          }
-
+            if (qrScanner && scannerRunning) await qrScanner.stop();
+          } catch (error) {}
           scannerRunning = false;
           scanInProgress = false;
         },
         () => {}
       );
-
       scannerRunning = true;
       cameraStatus.textContent = "Camera is running. Point it at a QR code.";
     } catch (error) {
       scannerRunning = false;
-      cameraStatus.textContent =
-        "Camera could not start. Allow camera access and use the HTTPS website.";
+      cameraStatus.textContent = "Camera could not start. Allow camera access and use the HTTPS website.";
     }
   });
 
@@ -789,7 +522,6 @@ footer p+p {margin-top:5px}
       cameraStatus.textContent = "The camera scanner is not running.";
       return;
     }
-
     try {
       await qrScanner.stop();
       scannerRunning = false;
@@ -802,38 +534,33 @@ footer p+p {margin-top:5px}
   imageInput.addEventListener("change", async () => {
     const file = imageInput.files && imageInput.files[0];
     if (!file) return;
-
     if (typeof Html5Qrcode === "undefined") {
-      resultBox.textContent =
-        "Scanner library failed to load. Check your internet connection.";
+      resultBox.textContent = "Scanner library failed to load. Check your internet connection.";
       return;
     }
-
     resultBox.textContent = "Reading image...";
-
+    const imageScanner = new Html5Qrcode("qr-file-reader");
     try {
-      const imageScanner = new Html5Qrcode("qr-file-reader");
       const decodedText = await imageScanner.scanFile(file, true);
       showQRResult(decodedText);
-      imageScanner.clear();
     } catch (error) {
-      resultBox.textContent =
-        "No readable QR code found. Please choose a clearer image containing a QR code.";
+      resultBox.textContent = "No readable QR code found. Choose a clearer image containing a QR code.";
+    } finally {
+      try { await imageScanner.clear(); } catch (error) {}
     }
   });
 })();
 </script>
 
-<!-- Hidden, separate element for scanning uploaded QR images -->
 <div id="qr-file-reader" aria-hidden="true"></div>
 
-<!-- FIREBASE AUTHENTICATION -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendPasswordResetEmail,
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
@@ -857,6 +584,7 @@ const emailInput = document.getElementById("account-email");
 const passwordInput = document.getElementById("account-password");
 const loginButton = document.getElementById("account-login");
 const signupButton = document.getElementById("account-signup");
+const forgotPasswordButton = document.getElementById("forgot-password");
 const logoutButton = document.getElementById("account-logout");
 const continueButton = document.getElementById("account-continue");
 const loggedInPanel = document.getElementById("account-logged-in");
@@ -882,36 +610,14 @@ function setBusy(busy) {
 
 function friendlyError(error) {
   const code = error?.code || "";
-
-  if (code.includes("email-already-in-use")) {
-    return "This email already has an account. Please sign in.";
-  }
-  if (code.includes("invalid-email")) {
-    return "Please enter a valid email address.";
-  }
-  if (code.includes("weak-password")) {
-    return "Your password must contain at least 6 characters.";
-  }
-  if (
-    code.includes("invalid-credential") ||
-    code.includes("wrong-password") ||
-    code.includes("user-not-found")
-  ) {
-    return "Email or password is incorrect. Please check and try again.";
-  }
-  if (code.includes("too-many-requests")) {
-    return "Too many attempts. Please wait a while and try again.";
-  }
-  if (code.includes("network-request-failed")) {
-    return "Network error. Check your internet connection.";
-  }
-  if (code.includes("operation-not-allowed")) {
-    return "Email/password login is not enabled in Firebase Authentication settings.";
-  }
-  if (code.includes("unauthorized-domain")) {
-    return "This website domain is not authorised in Firebase Authentication settings.";
-  }
-
+  if (code.includes("email-already-in-use")) return "This email already has an account. Please sign in.";
+  if (code.includes("invalid-email")) return "Please enter a valid email address.";
+  if (code.includes("weak-password")) return "Your password must contain at least 6 characters.";
+  if (code.includes("invalid-credential") || code.includes("wrong-password") || code.includes("user-not-found")) return "Email or password is incorrect. Please check and try again.";
+  if (code.includes("too-many-requests")) return "Too many attempts. Please wait a while and try again.";
+  if (code.includes("network-request-failed")) return "Network error. Check your internet connection.";
+  if (code.includes("operation-not-allowed")) return "Email/password login is not enabled in Firebase Authentication settings.";
+  if (code.includes("unauthorized-domain")) return "This website domain is not authorised in Firebase Authentication settings.";
   return "Something went wrong. Please try again. (" + code + ")";
 }
 
@@ -920,7 +626,6 @@ function showAccountScreen(user) {
   siteContent.hidden = true;
   form.hidden = Boolean(user);
   loggedInPanel.hidden = !user;
-
   userEmail.textContent = user ? (user.email || "Signed-in customer") : "";
   accountTitle.textContent = user ? "Welcome back!" : "Welcome to EMMMY PRINT";
   accountIntro.textContent = user
@@ -934,7 +639,6 @@ function showWebsite() {
     showMessage("Please sign in or create an account first.");
     return;
   }
-
   accountSection.hidden = true;
   siteContent.hidden = false;
   window.scrollTo({top:0,behavior:"smooth"});
@@ -944,13 +648,8 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   showMessage("");
   setBusy(true);
-
   try {
-    await signInWithEmailAndPassword(
-      auth,
-      emailInput.value.trim(),
-      passwordInput.value
-    );
+    await signInWithEmailAndPassword(auth, emailInput.value.trim(), passwordInput.value);
     showMessage("Sign-in successful.", true);
   } catch (error) {
     showMessage(friendlyError(error));
@@ -959,9 +658,51 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-signupButton.addEventListener("click", async () => {
+/* NEW: FORGOT PASSWORD FUNCTION */
+forgotPasswordButton.addEventListener("click", async () => {
+  const email = emailInput.value.trim();
+
+  if (!email) {
+    showMessage("Enter your registered email address first.");
+    emailInput.focus();
+    return;
+  }
+
+  if (!emailInput.checkValidity()) {
+    showMessage("Please enter a valid email address.");
+    emailInput.focus();
+    return;
+  }
+
+  forgotPasswordButton.disabled = true;
+  forgotPasswordButton.textContent = "Sending reset email...";
   showMessage("");
 
+  try {
+    await sendPasswordResetEmail(auth, email);
+    showMessage(
+      "If an account matches that email, a password reset email will be sent. Check your inbox and spam folder.",
+      true
+    );
+  } catch (error) {
+    console.error("Password reset error:", error);
+    if (error.code === "auth/invalid-email") {
+      showMessage("Please enter a valid email address.");
+    } else if (error.code === "auth/too-many-requests") {
+      showMessage("Too many attempts. Please wait and try again later.");
+    } else if (error.code === "auth/network-request-failed") {
+      showMessage("Network error. Please check your internet connection.");
+    } else {
+      showMessage("Unable to request a reset email. Please try again.");
+    }
+  } finally {
+    forgotPasswordButton.disabled = false;
+    forgotPasswordButton.textContent = "Forgot Password?";
+  }
+});
+
+signupButton.addEventListener("click", async () => {
+  showMessage("");
   const email = emailInput.value.trim();
   const password = passwordInput.value;
 
@@ -969,14 +710,12 @@ signupButton.addEventListener("click", async () => {
     showMessage("Enter your email address and password first.");
     return;
   }
-
   if (password.length < 6) {
-    showMessage("Your password must contain at least 8 characters.");
+    showMessage("Your password must contain at least 6 characters.");
     return;
   }
 
   setBusy(true);
-
   try {
     await createUserWithEmailAndPassword(auth, email, password);
     showMessage("Account created successfully. Press Continue to Website.", true);
@@ -1000,7 +739,6 @@ logoutButton.addEventListener("click", async () => {
 
 signOutLink.addEventListener("click", async (event) => {
   event.preventDefault();
-
   try {
     await signOut(auth);
   } catch (error) {
